@@ -1,0 +1,146 @@
+# ===========================================
+# DEMART MÜHENDİSLİK - .htaccess
+# ===========================================
+
+# React Router için URL Rewrite
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # React Router - tüm istekleri index.html'e yönlendir
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# ===========================================
+# SECURITY HEADERS
+# ===========================================
+<IfModule mod_headers.c>
+  # TEST HEADER - Doğrulama için (sonra kaldırılacak)
+  Header set X-Demart-Test "ok"
+  
+  # XSS Koruması
+  Header always set X-XSS-Protection "1; mode=block"
+  
+  # MIME Type Sniffing Engelleme
+  Header always set X-Content-Type-Options "nosniff"
+  
+  # Clickjacking Koruması (iframe engelleme)
+  Header always set X-Frame-Options "SAMEORIGIN"
+  
+  # Referrer Politikası
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  
+  # Permissions Policy (eski adıyla Feature Policy)
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+  
+  # Content Security Policy (CSP) - Temel güvenlik
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.youtube.com https://www.google.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; frame-src 'self' https://www.youtube.com https://www.google.com; connect-src 'self' https://www.google-analytics.com; media-src 'self' https://www.youtube.com;"
+  
+  # HTTP Strict Transport Security (HSTS)
+  # NOT: HTTPS çalıştıktan sonra aktif edilecek
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# ===========================================
+# GZIP SIKISTIRMA (Performans)
+# ===========================================
+<IfModule mod_deflate.c>
+  # HTML, CSS, JavaScript, Text, XML ve fontları sıkıştır
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE application/font-woff
+  AddOutputFilterByType DEFLATE application/font-woff2
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE font/otf
+</IfModule>
+
+# ===========================================
+# BROWSER CACHE (Performans)
+# ===========================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Varsayılan cache süresi
+  ExpiresDefault "access plus 1 month"
+  
+  # HTML - kısa cache (dinamik içerik)
+  ExpiresByType text/html "access plus 0 seconds"
+  
+  # CSS ve JavaScript
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/x-javascript "access plus 1 year"
+  
+  # Görseller
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType image/ico "access plus 1 year"
+  
+  # Fontlar
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  
+  # JSON ve XML
+  ExpiresByType application/json "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 0 seconds"
+  ExpiresByType text/xml "access plus 0 seconds"
+</IfModule>
+
+# ===========================================
+# CACHE CONTROL HEADERS
+# ===========================================
+<IfModule mod_headers.c>
+  # HTML için no-cache
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+  </FilesMatch>
+  
+  # Static assets için uzun cache
+  <FilesMatch "\.(css|js|jpg|jpeg|png|gif|webp|svg|ico|woff|woff2|ttf|otf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+# ===========================================
+# DOSYA KORUMA
+# ===========================================
+# .htaccess dosyasına erişimi engelle
+<Files .htaccess>
+  Order allow,deny
+  Deny from all
+</Files>
+
+# Hassas dosyalara erişimi engelle
+<FilesMatch "\.(env|log|ini|sh|sql|bak|config)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# ===========================================
+# HATA SAYFALARI (Opsiyonel)
+# ===========================================
+ErrorDocument 404 /index.html
+ErrorDocument 500 /index.html
