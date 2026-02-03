@@ -3,7 +3,7 @@ export const faqContent = {
     products: {
       "mechanical-valve-interlock-manual-multi-turn": {
         title: "Mechanical Valve Interlock – Manual Multi-Turn Vanalar",
-        image: "/images/products/smith-interlocks.jpg",
+        image: "/images/placeholder.svg",
         scopeNote:
           "Bu SSS yalnızca DCS veya otomasyon tarafından kontrol edilmeyen, manuel olarak çalıştırılan multi-turn vanalar (gate, globe vb.) içindir. Aktüatörlü veya otomasyonlu vanalar kapsam dışıdır.",
         items: [
@@ -61,7 +61,7 @@ export const faqContent = {
       },
       "mechanical-valve-interlock-manual-quarter-turn": {
         title: "Mechanical Valve Interlock – Manual Quarter-Turn Vanalar",
-        image: "/images/products/netherlocks.jpg",
+        image: "/images/placeholder.svg",
         scopeNote:
           "Bu SSS yalnızca DCS veya otomasyon tarafından kontrol edilmeyen, manuel olarak çalıştırılan quarter-turn vanalar (ball, butterfly vb.) içindir. Aktüatörlü veya otomasyonlu vanalar kapsam dışıdır.",
         items: [
@@ -119,7 +119,7 @@ export const faqContent = {
       },
       "key-exchange-unit": {
         title: "Key Exchange Unit – Anahtar Transfer Ünitesi",
-        image: "/images/products/smith-interlocks.jpg",
+        image: "/images/placeholder.svg",
         scopeNote:
           "Key Exchange Unit, DCS veya otomasyon sistemlerinden bağımsız olarak, manuel vanalar, kapaklar ve ekipmanlar arasında doğru işlem sırasını mekanik olarak zorunlu kılmak için kullanılır.",
         items: [
@@ -177,7 +177,7 @@ export const faqContent = {
       },
       "key-management": {
         title: "Key Management – Anahtar Yönetim Sistemleri",
-        image: "/images/products/key-management.jpg",
+        image: "/images/placeholder.svg",
         items: [
           {
             question: "Key Management neyi kontrol eder?",
@@ -208,7 +208,7 @@ export const faqContent = {
       },
       "sequence-control": {
         title: "Sequence Control – Proses Bazlı Kilitleme",
-        image: "/images/products/sequence-control.jpg",
+        image: "/images/placeholder.svg",
         items: [
           {
             question: "Sequence Control neyi sağlar?",
@@ -239,7 +239,7 @@ export const faqContent = {
       },
       "easidrive-portable-actuator": {
         title: "EasiDrive Portable Actuator",
-        image: "/images/products/easidrive.jpg",
+        image: "/images/placeholder.svg",
         items: [
           {
             question: "EasiDrive ne için kullanılır?",
@@ -270,7 +270,7 @@ export const faqContent = {
       },
       "flexidrive-remote-operator": {
         title: "FlexiDrive Remote Operator – Uzaktan Vana Çalıştırma Sistemi",
-        image: "/images/products/flexidrive.jpg",
+        image: "/images/placeholder.svg",
         scopeNote:
           "FlexiDrive, manuel vanaların doğrudan saha üzerinde çalıştırılmasının riskli veya zor olduğu durumlarda, vananın uzaktan ve kontrollü şekilde çalıştırılmasını sağlar.",
         items: [
@@ -318,7 +318,7 @@ export const faqContent = {
       },
       "power-wrench-portable-actuator": {
         title: "Power Wrench Portable Actuator",
-        image: "/images/products/power-wrench.jpg",
+        image: "/images/placeholder.svg",
         items: [
           {
             question: "Power Wrench ne sağlar?",
@@ -349,7 +349,7 @@ export const faqContent = {
       },
       "vpi-position-indicator": {
         title: "VPI – Valve Position Indicator",
-        image: "/images/products/vpi.jpg",
+        image: "/images/placeholder.svg",
         items: [
           {
             question: "VPI tam olarak ne yapar?",
@@ -409,7 +409,7 @@ export const faqContent = {
     products: {
       "mechanical-valve-interlock-manual-multi-turn": {
         title: "Mechanical Valve Interlock – Manual Multi-Turn Valves",
-        image: "/images/products/smith-interlocks.jpg",
+        image: "/images/placeholder.svg",
         scopeNote:
           "This FAQ is only for manual multi-turn valves (gate, globe, etc.) that are not controlled by DCS or automation. Actuated or automated valves are out of scope.",
         items: [
@@ -467,7 +467,7 @@ export const faqContent = {
       },
       "mechanical-valve-interlock-manual-quarter-turn": {
         title: "Mechanical Valve Interlock – Manual Quarter-Turn Valves",
-        image: "/images/products/netherlocks.jpg",
+        image: "/images/placeholder.svg",
         scopeNote:
           "This FAQ is only for manual quarter-turn valves (ball, butterfly, etc.) that are not controlled by DCS or automation. Actuated or automated valves are out of scope.",
         items: [
@@ -525,7 +525,7 @@ export const faqContent = {
       },
       "key-exchange-unit": {
         title: "Key Exchange Unit – Key Transfer Unit",
-        image: "/images/products/smith-interlocks.jpg",
+        image: "/images/placeholder.svg",
         scopeNote:
           "Key Exchange Unit is used to mechanically enforce the correct operating sequence between manual valves, covers, and equipment, independently of DCS or automation systems.",
         items: [
@@ -583,7 +583,7 @@ export const faqContent = {
       },
       "key-management": {
         title: "Key Management Systems",
-        image: "/images/products/key-management.jpg",
+        image: "/images/placeholder.svg",
         items: [
           {
             question: "What does Key Management control?",
@@ -614,7 +614,7 @@ export const faqContent = {
       },
       "sequence-control": {
         title: "Sequence Control Systems",
-        image: "/images/products/sequence-control.jpg",
+        image: "/images/placeholder.svg",
         items: [
           {
             question: "What does Sequence Control provide?",
@@ -645,7 +645,7 @@ export const faqContent = {
       },
       "easidrive-portable-actuator": {
         title: "EasiDrive Portable Actuator",
-        image: "/images/products/easidrive.jpg",
+        image: "/images/placeholder.svg",
         items: [
           {
             question: "What is EasiDrive used for?",
@@ -676,7 +676,7 @@ export const faqContent = {
       },
       "flexidrive-remote-operator": {
         title: "FlexiDrive Remote Operator – Remote Valve Operating System",
-        image: "/images/products/flexidrive.jpg",
+        image: "/images/placeholder.svg",
         scopeNote:
           "FlexiDrive enables the valve to be operated remotely and in a controlled manner when directly operating manual valves on site is risky or difficult.",
         items: [
@@ -724,7 +724,7 @@ export const faqContent = {
       },
       "power-wrench-portable-actuator": {
         title: "Power Wrench Portable Actuator",
-        image: "/images/products/power-wrench.jpg",
+        image: "/images/placeholder.svg",
         items: [
           {
             question: "What does Power Wrench provide?",
@@ -755,7 +755,7 @@ export const faqContent = {
       },
       "vpi-position-indicator": {
         title: "VPI – Valve Position Indicator",
-        image: "/images/products/vpi.jpg",
+        image: "/images/placeholder.svg",
         items: [
           {
             question: "What exactly does VPI do?",

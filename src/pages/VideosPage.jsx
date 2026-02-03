@@ -12,22 +12,102 @@ const YOUTUBE_CHANNEL_URL = `https://www.youtube.com/channel/${SOFIS_CHANNEL_ID}
 // Sofis YouTube kanalındaki tüm videolar
 const defaultVideos = [
   // En yeni videolar
-  { id: 'iDNBFRmztr0', title: 'Ensuring safe operations across the hydrogen value chain', titleTr: 'Hidrojen değer zincirinde güvenli operasyonlar', description: 'Green hydrogen tube trailer refueling panel interlock solution', descriptionTr: 'Yeşil hidrojen tüp treyler dolum paneli kilit çözümü' },
-  { id: '-s4-NPrDonI', title: 'Sofis products overview', titleTr: 'Sofis ürünlerine genel bakış', description: 'Overview of interlocks, portable actuators, and position indicators', descriptionTr: 'Kilitler, taşınabilir aktüatörler ve konum göstergeleri' },
+  {
+    id: 'iDNBFRmztr0',
+    title: 'Ensuring safe operations across the hydrogen value chain',
+    titleTr: 'Hidrojen değer zincirinde güvenli operasyonlar',
+    titleAz: 'Hidrogen dəyər zəncirində təhlükəsiz əməliyyatlar',
+    description: 'Green hydrogen tube trailer refueling panel interlock solution',
+    descriptionTr: 'Yeşil hidrojen tüp treyler dolum paneli kilit çözümü',
+    descriptionAz: 'Yaşıl hidrogen boru treyleri dolum paneli üçün kilid həlli'
+  },
+  {
+    id: '-s4-NPrDonI',
+    title: 'Sofis products overview',
+    titleTr: 'Sofis ürünlerine genel bakış',
+    titleAz: 'Sofis məhsullarına ümumi baxış',
+    description: 'Overview of interlocks, portable actuators, and position indicators',
+    descriptionTr: 'Kilitler, taşınabilir aktüatörler ve konum göstergeleri',
+    descriptionAz: 'Kilitlər, portativ aktuatorlar və mövqe göstəricilərinə ümumi baxış'
+  },
   
   // Ürün videoları
-  { id: 'i6B76q9gOTE', title: 'Basics of valve interlocks', titleTr: 'Vana kilitleri temelleri', description: 'Learn how valve interlocks prevent accidents during startups/shutdowns', descriptionTr: 'Vana kilitlerinin başlatma/kapatma sırasında kazaları nasıl önlediğini öğrenin' },
-  { id: 'qPi9Z_GzKvs', title: 'How to read valve interlock sequence drawings - Basics', titleTr: 'Vana kilidi sıra çizimleri nasıl okunur - Temel', description: 'Understanding valve interlock sequence drawings for safe operations', descriptionTr: 'Güvenli operasyonlar için vana kilidi sıra çizimlerini anlama' },
-  { id: 'SBySDtIzd6A', title: 'How to read valve interlock sequence drawings - Advanced', titleTr: 'Vana kilidi sıra çizimleri nasıl okunur - İleri', description: 'Advanced techniques for reading valve interlock drawings', descriptionTr: 'Vana kilidi çizimlerini okumak için ileri teknikler' },
-  { id: '5foASQlbjzU', title: 'Sofis Key Management System', titleTr: 'Sofis Anahtar Yönetim Sistemi', description: 'Electronic key system controlling safety-critical interlocked valves', descriptionTr: 'Güvenlik kritik kilitli vanaları kontrol eden elektronik anahtar sistemi' },
-  { id: 'ixiFklfnh4c', title: 'Sofis Key Management System for Equinor', titleTr: 'Equinor için Sofis Anahtar Yönetim Sistemi', description: 'Case study on key management systems', descriptionTr: 'Anahtar yönetim sistemleri vaka çalışması' },
+  {
+    id: 'i6B76q9gOTE',
+    title: 'Basics of valve interlocks',
+    titleTr: 'Vana kilitleri temelleri',
+    titleAz: 'Vana kilidlərinin əsasları',
+    description: 'Learn how valve interlocks prevent accidents during startups/shutdowns',
+    descriptionTr: 'Vana kilitlerinin başlatma/kapatma sırasında kazaları nasıl önlediğini öğrenin',
+    descriptionAz: 'Vana kilidlərinin işə salma/söndürmə zamanı qəzaları necə önlədiyini öyrənin'
+  },
+  {
+    id: 'qPi9Z_GzKvs',
+    title: 'How to read valve interlock sequence drawings - Basics',
+    titleTr: 'Vana kilidi sıra çizimleri nasıl okunur - Temel',
+    titleAz: 'Vana kilidi sıra çertyojları necə oxunur - əsaslar',
+    description: 'Understanding valve interlock sequence drawings for safe operations',
+    descriptionTr: 'Güvenli operasyonlar için vana kilidi sıra çizimlerini anlama',
+    descriptionAz: 'Təhlükəsiz əməliyyatlar üçün vana kilidi sıra çertyojlarını anlama'
+  },
+  {
+    id: 'SBySDtIzd6A',
+    title: 'How to read valve interlock sequence drawings - Advanced',
+    titleTr: 'Vana kilidi sıra çizimleri nasıl okunur - İleri',
+    titleAz: 'Vana kilidi sıra çertyojları necə oxunur - qabaqcıl',
+    description: 'Advanced techniques for reading valve interlock drawings',
+    descriptionTr: 'Vana kilidi çizimlerini okumak için ileri teknikler',
+    descriptionAz: 'Vana kilidi çertyojlarını oxumaq üçün qabaqcıl üsullar'
+  },
+  {
+    id: '5foASQlbjzU',
+    title: 'Sofis Key Management System',
+    titleTr: 'Sofis Anahtar Yönetim Sistemi',
+    titleAz: 'Sofis Açarların İdarəetmə Sistemi',
+    description: 'Electronic key system controlling safety-critical interlocked valves',
+    descriptionTr: 'Güvenlik kritik kilitli vanaları kontrol eden elektronik anahtar sistemi',
+    descriptionAz: 'Təhlükəsizlik kritik kilidli vanaları idarə edən elektron açar sistemi'
+  },
+  {
+    id: 'ixiFklfnh4c',
+    title: 'Sofis Key Management System for Equinor',
+    titleTr: 'Equinor için Sofis Anahtar Yönetim Sistemi',
+    titleAz: 'Equinor üçün Sofis Açarların İdarəetmə Sistemi',
+    description: 'Case study on key management systems',
+    descriptionTr: 'Anahtar yönetim sistemleri vaka çalışması',
+    descriptionAz: 'Açarların idarəetmə sistemləri üzrə nümunə araşdırma'
+  },
   
   // Taşınabilir aktüatörler
-  { id: 'BcVO9ScpObU', title: 'Sofis portable actuators', titleTr: 'Sofis taşınabilir aktüatörler', description: 'EasiDrive and Power Wrench for easy manual valve operation', descriptionTr: 'Kolay manuel vana operasyonu için EasiDrive ve Power Wrench' },
-  { id: 'ZGRvD1sTJqY', title: 'Power Wrench portable valve actuator', titleTr: 'Power Wrench taşınabilir vana aktüatörü', description: 'Pneumatic tool reducing manual valve operating time by up to 80%', descriptionTr: 'Manuel vana çalıştırma süresini %80\'e kadar azaltan pnömatik alet' },
+  {
+    id: 'BcVO9ScpObU',
+    title: 'Sofis portable actuators',
+    titleTr: 'Sofis taşınabilir aktüatörler',
+    titleAz: 'Sofis portativ aktuatorları',
+    description: 'EasiDrive and Power Wrench for easy manual valve operation',
+    descriptionTr: 'Kolay manuel vana operasyonu için EasiDrive ve Power Wrench',
+    descriptionAz: 'Asan manual vana əməliyyatı üçün EasiDrive və Power Wrench'
+  },
+  {
+    id: 'ZGRvD1sTJqY',
+    title: 'Power Wrench portable valve actuator',
+    titleTr: 'Power Wrench taşınabilir vana aktüatörü',
+    titleAz: 'Power Wrench portativ vana aktuatoru',
+    description: 'Pneumatic tool reducing manual valve operating time by up to 80%',
+    descriptionTr: 'Manuel vana çalıştırma süresini %80\'e kadar azaltan pnömatik alet',
+    descriptionAz: 'Manual vana işlətmə müddətini 80%-ə qədər azaldan pnevmatik alət'
+  },
   
   // Uygulama videoları
-  { id: '2_Ah4y1xZ00', title: 'Valve interlocks at dry bulk terminals', titleTr: 'Kuru yük terminallerinde vana kilitleri', description: 'Using valve interlocks to avoid contamination', descriptionTr: 'Kontaminasyonu önlemek için vana kilitlerinin kullanımı' },
+  {
+    id: '2_Ah4y1xZ00',
+    title: 'Valve interlocks at dry bulk terminals',
+    titleTr: 'Kuru yük terminallerinde vana kilitleri',
+    titleAz: 'Quru yük terminallarında vana kilidləri',
+    description: 'Using valve interlocks to avoid contamination',
+    descriptionTr: 'Kontaminasyonu önlemek için vana kilitlerinin kullanımı',
+    descriptionAz: 'Kontaminasiyanın qarşısını almaq üçün vana kilidlərindən istifadə'
+  },
 ];
 
 const content = {
@@ -52,16 +132,26 @@ const content = {
     error: "Error loading videos.",
     moreVideos: "More Videos",
     moreDescription: "Find more training videos, installation guides and application examples on the Sofis YouTube channel."
+  },
+  az: {
+    pageTitle: "Videolar",
+    pageDescription: "Sofis məhsul təqdimatları, quraşdırma təlimatları və təlim videoları",
+    channelTitle: "Sofis Valve Operation",
+    channelSubtitle: "Rəsmi YouTube Kanalı",
+    seeAll: "Bütün Videoları Gör",
+    loading: "Videolar yüklənir...",
+    error: "Videolar yüklənərkən xəta baş verdi.",
+    moreVideos: "Daha Çox Video",
+    moreDescription: "Sofis YouTube kanalında daha çox təlim videosu, quraşdırma bələdçisi və tətbiq nümunələri tapa bilərsiniz."
   }
 };
 
 const VideosPage = () => {
-  const { locale } = useLanguage();
+  const { locale, t } = useLanguage();
   const text = content?.[locale];
-  const { language } = useLanguage();
-  const isTrOrAz = language === 'tr' || language === 'az';
   const videos = defaultVideos;
-  const isTurkish = locale === 'tr';
+  const getTitle = (video) => t(video.titleTr, video.title, video.titleAz);
+  const getDescription = (video) => t(video.descriptionTr, video.description, video.descriptionAz);
 
   if (!text) {
     return (
@@ -131,7 +221,7 @@ const VideosPage = () => {
                       <iframe
                         className="absolute top-0 left-0 w-full h-full"
                         src={`https://www.youtube.com/embed/${video.id}?rel=0`}
-                        title={isTurkish ? (video.titleTr || video.title) : video.title}
+                        title={getTitle(video)}
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
@@ -140,14 +230,10 @@ const VideosPage = () => {
                     </div>
                     <div className="p-4">
                       <h3 className="font-bold text-gray-900 mb-2 line-clamp-2">
-                        {isTurkish ? (video.titleTr || video.title) : video.title}
+                        {getTitle(video)}
                       </h3>
                       <p className="text-gray-600 text-sm line-clamp-2">
-                        {isTurkish ? (video.descriptionTr || video.description) : video.description}
-                        {isTrOrAz ? (video.titleTr || video.title) : video.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm line-clamp-2">
-                        {isTrOrAz ? (video.descriptionTr || video.description) : video.description}
+                        {getDescription(video)}
                       </p>
                     </div>
                   </div>

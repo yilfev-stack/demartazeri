@@ -11,8 +11,6 @@ const ProductsPage = () => {
   const { locale, t } = useLanguage();
   const productData = products?.[locale];
   const hasContent = Boolean(productData);
-  const { language } = useLanguage();
-  const isTrOrAz = language === 'tr' || language === 'az';
 
   const quickLinks = (productData.categories || []).flatMap((category) =>
     category.items.map((product) => ({
@@ -60,14 +58,6 @@ const ProductsPage = () => {
                 </p>
               </>
             )}
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
-              {productData.pageTitle}
-            </h1>
-            <p className="text-white/90 max-w-3xl text-sm md:text-base">
-              {isTrOrAz
-                ? 'Sofis ürün portföyündeki tüm vana kilidi, taşınabilir aktüatör ve vana izleme çözümlerini Demart güvencesiyle tek bir sayfada keşfedin.'
-                : 'Explore the full Sofis portfolio of valve interlocks, portable actuators and valve monitoring solutions on one overview page, supported by Demart Engineering.'}
-            </p>
           </div>
         </section>
 
@@ -138,16 +128,6 @@ const ProductsPage = () => {
                                     <ArrowRight className="ml-1 w-4 h-4" />
                                   </Link>
                                 </div>
-                              <div>
-                                <Link
-                                  to={product.link}
-                                  className="inline-flex items-center text-[#00a0e3] font-semibold text-sm md:text-base hover:underline"
-                                >
-                                  {isTrOrAz
-                                    ? `${product.name} sayfasına git`
-                                    : `Go to ${product.name}`}
-                                  <ArrowRight className="ml-1 w-4 h-4" />
-                                </Link>
                               </div>
                             </article>
                           );
@@ -185,12 +165,6 @@ const QuickLinks = ({ products, getAnchorId, onSelect }) => {
     'Jump directly to the product you are looking for.',
     'Maraqladığınız məhsula bir kliklə keçin.'
   );
-const QuickLinks = ({ products, language, getAnchorId, onSelect }) => {
-  const title = isTrOrAz ? 'Hızlı Ürün Linkləri' : 'Quick Product Links';
-  const subtitle =
-    isTrOrAz
-      ? 'Maraqladığınız məhsula bir kliklə keçin.'
-      : 'Jump directly to the product you are looking for.';
 
   return (
     <aside className="bg-gradient-to-b from-slate-900 to-slate-800 text-white rounded-2xl shadow-lg p-5 md:p-6">

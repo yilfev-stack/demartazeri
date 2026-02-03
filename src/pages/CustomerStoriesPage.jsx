@@ -21,7 +21,7 @@ const content = {
         solution: "FlexiDrive uzaktan vana operatörleri kurularak operatörler güvenli mesafeden çalışabilir hale geldi.",
         result: "İş kazalarında %90 azalma, operasyon süresinde %40 iyileşme sağlandı.",
         quote: "FlexiDrive sistemi, operatörlerimizin güvenliğini önemli ölçüde artırdı. Artık tehlikeli alanlara girmeden vanaları çalıştırabiliyoruz.",
-        image: "https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=800&q=80"
+        image: "/images/placeholder.svg"
       },
       {
         id: 2,
@@ -32,7 +32,7 @@ const content = {
         solution: "Sofis vana kilit sistemi ile önceden tanımlanmış operasyon sırası zorunlu hale getirildi.",
         result: "Kurulumdan bu yana sıfır yanlış yükleme olayı, %25 verimlilik artışı.",
         quote: "Vana kilit sistemi sayesinde insan hatası kaynaklı riskleri tamamen ortadan kaldırdık.",
-        image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80"
+        image: "/images/placeholder.svg"
       },
       {
         id: 3,
@@ -43,7 +43,7 @@ const content = {
         solution: "Vana kilitleme sistemi ile doğru hat düzenlemeleri garanti altına alındı.",
         result: "Sıfır çapraz kontaminasyon olayı, düzenleyici uyumluluk sağlandı.",
         quote: "Sofis çözümleri ile hem operatör güvenliğini hem de çevresel uyumluluğu sağladık.",
-        image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
+        image: "/images/placeholder.svg"
       }
     ],
     cta: {
@@ -65,7 +65,7 @@ const content = {
         solution: "FlexiDrive remote valve operators were installed, enabling operators to work from a safe distance.",
         result: "90% reduction in workplace accidents, 40% improvement in operation time.",
         quote: "The FlexiDrive system significantly improved the safety of our operators. We can now operate valves without entering hazardous areas.",
-        image: "https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=800&q=80"
+        image: "/images/placeholder.svg"
       },
       {
         id: 2,
@@ -76,7 +76,7 @@ const content = {
         solution: "Predefined operation sequence was made mandatory with Sofis valve interlock system.",
         result: "Zero misloading incidents since installation, 25% efficiency increase.",
         quote: "Thanks to the valve interlock system, we completely eliminated risks from human error.",
-        image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80"
+        image: "/images/placeholder.svg"
       },
       {
         id: 3,
@@ -87,13 +87,57 @@ const content = {
         solution: "Correct line-ups were guaranteed with valve interlocking system.",
         result: "Zero cross-contamination incidents, regulatory compliance achieved.",
         quote: "With Sofis solutions, we ensured both operator safety and environmental compliance.",
-        image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
+        image: "/images/placeholder.svg"
       }
     ],
     cta: {
       title: "Be our next success story",
       description: "Learn how we can improve your valve operations",
       button: "Contact Us"
+    }
+  },
+  az: {
+    pageTitle: "Müştəri Hekayələri",
+    pageSubtitle: "Dünya üzrə müştərilərimizin uğur hekayələri və təcrübələri",
+    stories: [
+      {
+        id: 1,
+        company: "Böyük Rafineri - Türkiyə",
+        industry: "Neft və Qaz",
+        title: "Tank Sahəsində Təhlükəsizlik Dəyişimi",
+        challenge: "Tank alt drenaj vanalarının manual idarəsi zamanı operator təhlükəsizliyi riskləri yaranırdı.",
+        solution: "FlexiDrive uzaqdan vana operatorları quraşdırıldı və operatorlar təhlükəsiz məsafədən işləyə bildi.",
+        result: "İş qəzalarında 90% azalma, əməliyyat müddətində 40% yaxşılaşma.",
+        quote: "FlexiDrive sistemi operatorlarımızın təhlükəsizliyini ciddi şəkildə artırdı. İndi təhlükəli zonaya girmədən vanaları idarə edə bilirik.",
+        image: "/images/placeholder.svg"
+      },
+      {
+        id: 2,
+        company: "Kimya Zavodu - Almaniya",
+        industry: "Kimya",
+        title: "Yanlış Yükləmənin Qarşısını Alan Sistem",
+        challenge: "Terminal əməliyyatlarında çarpaz kontaminasiya və səhv məhsul yükləmə riskləri vardı.",
+        solution: "Sofis vana kilidləmə sistemi ilə əvvəlcədən müəyyən edilmiş əməliyyat ardıcıllığı məcburi edildi.",
+        result: "Quraşdırmadan sonra sıfır yanlış yükləmə, 25% səmərəlilik artımı.",
+        quote: "Vana kilidləmə sistemi sayəsində insan xətasından doğan riskləri tam aradan qaldırdıq.",
+        image: "/images/placeholder.svg"
+      },
+      {
+        id: 3,
+        company: "Su Təmizləmə Təsisi - Hollandiya",
+        industry: "Su və Çirkab Su",
+        title: "Kimyəvi Boşaltma Təhlükəsizliyi",
+        challenge: "Təhlükəli kimyəvi maddələrin boşaldılması zamanı xətt düzülüşü xətaları olurdu.",
+        solution: "Vana kilidləmə sistemi ilə düzgün xətt düzülüşləri təmin edildi.",
+        result: "Sıfır çarpaz kontaminasiya, tənzimləyici uyğunluq təmin olundu.",
+        quote: "Sofis həlləri ilə həm operator təhlükəsizliyini, həm də ekoloji uyğunluğu təmin etdik.",
+        image: "/images/placeholder.svg"
+      }
+    ],
+    cta: {
+      title: "Sizin də uğur hekayəniz olsun",
+      description: "Vana əməliyyatlarınızı necə yaxşılaşdıra biləcəyimizi öyrənin",
+      button: "Bizimlə Əlaqə"
     }
   }
 };
@@ -114,9 +158,6 @@ const CustomerStoriesPage = () => {
       </div>
     );
   }
-  const { language } = useLanguage();
-  const isTrOrAz = language === 'tr' || language === 'az';
-
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -160,31 +201,19 @@ const CustomerStoriesPage = () => {
                     <div className="space-y-3 mb-6">
                       <div>
                         <span className="font-semibold text-gray-700">
-
                           {t('Zorluk: ', 'Challenge: ', 'Çətinlik: ')}
-
-                          {isTrOrAz ? 'Çətinlik: ' : 'Challenge: '}
-
                         </span>
                         <span className="text-gray-600">{story.challenge}</span>
                       </div>
                       <div>
                         <span className="font-semibold text-gray-700">
-
                           {t('Çözüm: ', 'Solution: ', 'Həll: ')}
-
-                          {isTrOrAz ? 'Həll: ' : 'Solution: '}
-
                         </span>
                         <span className="text-gray-600">{story.solution}</span>
                       </div>
                       <div>
                         <span className="font-semibold text-gray-700">
-
                           {t('Sonuç: ', 'Result: ', 'Nəticə: ')}
-
-                          {isTrOrAz ? 'Nəticə: ' : 'Result: '}
-
                         </span>
                         <span className="text-gray-600">{story.result}</span>
                       </div>

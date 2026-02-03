@@ -31,21 +31,6 @@ const SEO = ({
     az: 'vana kilidləri, valve interlocks, portativ aktuator, vana baxım, Sofis, Smith Flow Control, Netherlocks, EasiDrive, Power Wrench, mövqe göstəricisi, idarəetmə klapanı, kürə klapan, kəpənək klapan, aktuator, İstanbul, Türkiyə, sənaye klapanı'
   };
   const defaultKeywords = defaultKeywordsByLocale[locale];
-  const { language, locale } = useLanguage();
-  const company = companyInfo[language] || companyInfo.tr;
-  const isTrOrAz = language === 'tr' || language === 'az';
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://demart.com.tr';
-  const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
-  const fullTitle = title ? `${title} | ${company.name}` : `${company.name} - ${company.tagline}`;
-  const defaultDescription = isTrOrAz
-    ? `${company.fullName} - Sofis Türkiye Resmi Distribütörü. Vana kilitleri, taşınabilir aktüatörler, vana bakım hizmetleri. ${company.tagline}`
-    : `${company.fullName} - Official Sofis distributor in Turkey. Valve interlocks, portable actuators and valve maintenance services. ${company.tagline}`;
-  const metaDescription = description || defaultDescription;
-  const defaultImage = logo;
-  const metaImage = image || defaultImage;
-  const defaultKeywords = isTrOrAz
-    ? 'vana kilitleri, valve interlocks, taşınabilir aktüatör, portable actuator, vana bakım, valve maintenance, Sofis, Smith Flow Control, Netherlocks, EasiDrive, Power Wrench, pozisyoner, kontrol vanası, küresel vana, kelebek vana, aktüatör, İstanbul, Türkiye, endüstriyel vana'
-    : 'valve interlocks, portable actuator, valve maintenance, Sofis, Smith Flow Control, Netherlocks, EasiDrive, Power Wrench, position indicator, control valve, ball valve, butterfly valve, actuator, Istanbul, Turkey, industrial valve';
   const localeTag = locale === 'en' ? 'en_US' : locale === 'az' ? 'az_AZ' : 'tr_TR';
   const languageName = locale === 'en' ? 'English' : locale === 'az' ? 'Azerbaijani' : 'Turkish';
 

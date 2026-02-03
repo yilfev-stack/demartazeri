@@ -156,8 +156,6 @@ const EnergyTransitionPage = () => {
   const data = content?.[locale];
   const routes = ROUTE_MAP[locale];
   const hasContent = Boolean(data);
-  const { language } = useLanguage();
-  const isTrOrAz = language === 'tr' || language === 'az';
 
   return (
     <div className="min-h-screen flex flex-col">
