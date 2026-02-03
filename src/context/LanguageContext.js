@@ -45,9 +45,7 @@ export const LanguageProvider = ({ children }) => {
     <LanguageContext.Provider
       value={{
         locale: resolvedLocale,
-        language: resolvedLocale,     // uyumluluk: bazı komponentler language kullanıyor olabilir
-        setLocale,                   // yeni standart: setLocale
-        setLanguage: setLocale,      // uyumluluk: eski kod setLanguage kullanıyorsa bozulmasın
+        setLocale,
         t,
       }}
     >

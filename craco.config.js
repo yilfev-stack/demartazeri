@@ -5,6 +5,7 @@ require("dotenv").config();
 // Check if we're in development/preview mode (not production build)
 // Craco sets NODE_ENV=development for start, NODE_ENV=production for build
 const isDevServer = process.env.NODE_ENV !== "production";
+const fs = require("fs");
 
 // Environment variable overrides
 const config = {
@@ -12,13 +13,20 @@ const config = {
   enableVisualEdits: isDevServer, // Only enable during dev server
 };
 
+const safeRequire = (modulePath) => {
+  if (fs.existsSync(modulePath)) {
+    return require(modulePath);
+  }
+  return null;
+};
+
 // Conditionally load visual edits modules only in dev mode
 let setupDevServer;
 let babelMetadataPlugin;
 
 if (config.enableVisualEdits) {
-  setupDevServer = require("./plugins/visual-edits/dev-server-setup");
-  babelMetadataPlugin = require("./plugins/visual-edits/babel-metadata-plugin");
+  setupDevServer = safeRequire("./plugins/visual-edits/dev-server-setup");
+  babelMetadataPlugin = safeRequire("./plugins/visual-edits/babel-metadata-plugin");
 }
 
 // Conditionally load health check modules only if enabled
@@ -27,9 +35,9 @@ let setupHealthEndpoints;
 let healthPluginInstance;
 
 if (config.enableHealthCheck) {
-  WebpackHealthPlugin = require("./plugins/health-check/webpack-health-plugin");
-  setupHealthEndpoints = require("./plugins/health-check/health-endpoints");
-  healthPluginInstance = new WebpackHealthPlugin();
+  WebpackHealthPlugin = safeRequire("./plugins/health-check/webpack-health-plugin");
+  setupHealthEndpoints = safeRequire("./plugins/health-check/health-endpoints");
+  healthPluginInstance = WebpackHealthPlugin ? new WebpackHealthPlugin() : null;
 }
 
 const webpackConfig = {

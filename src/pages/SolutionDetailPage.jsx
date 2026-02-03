@@ -19,45 +19,16 @@ const SolutionDetailPage = () => {
     backToSolutions: t('Çözümlere Dön', 'Back to Solutions', 'Həllərə Qayıt'),
     badge: t('Çözüm', 'Solution', 'Həll'),
     benefitsTitle: t('Bu çözümün faydaları:', 'Benefits of this solution:', 'Bu həllin üstünlükləri:'),
-    benefitItems: locale === 'en'
-      ? [
-  const { language } = useLanguage();
-  const isTrOrAz = language === 'tr' || language === 'az';
-  const basePath = isTrOrAz ? '/cozumler' : '/solutions';
-  const labels = {
-    breadcrumbHome: isTrOrAz ? 'Ana Səhifə' : 'Home',
-    breadcrumbSolutions: isTrOrAz ? 'Həllər' : 'Solutions',
-    notFoundTitle: isTrOrAz ? 'Həll Tapılmadı' : 'Solution Not Found',
-    backToSolutions: isTrOrAz ? 'Həllərə Qayıt' : 'Back to Solutions',
-    badge: isTrOrAz ? 'Həll' : 'Solution',
-    benefitsTitle: isTrOrAz ? 'Bu həllin üstünlükləri:' : 'Benefits of this solution:',
-    benefitItems: isTrOrAz
-      ? [
-          'İnsan xətası riskini minimuma endirir',
-          'Əməliyyat təhlükəsizliyini artırır',
-          'Normativ uyğunluğu təmin edir',
-          'Baxım və istismar xərclərini azaldır'
-        ]
-      : [
-          'Minimizes the risk of human error',
-          'Improves operational safety',
-          'Ensures regulatory compliance',
-          'Reduces maintenance and operating costs'
-        ]
-      : [
-          t('İnsan hatası riskini minimize eder', 'Minimizes the risk of human error', 'İnsan xətası riskini minimuma endirir'),
-          t('Operasyonel güvenliği artırır', 'Improves operational safety', 'Əməliyyat təhlükəsizliyini artırır'),
-          t('Mevzuat uyumluluğu sağlar', 'Ensures regulatory compliance', 'Normativ uyğunluğu təmin edir'),
-          t('Bakım ve işletme maliyetlerini azaltır', 'Reduces maintenance and operating costs', 'Baxım və istismar xərclərini azaldır')
-        ],
+    benefitItems: [
+      t('İnsan hatası riskini minimize eder', 'Minimizes the risk of human error', 'İnsan xətası riskini minimuma endirir'),
+      t('Operasyonel güvenliği artırır', 'Improves operational safety', 'Əməliyyat təhlükəsizliyini artırır'),
+      t('Mevzuat uyumluluğu sağlar', 'Ensures regulatory compliance', 'Normativ uyğunluğu təmin edir'),
+      t('Bakım ve işletme maliyetlerini azaltır', 'Reduces maintenance and operating costs', 'Baxım və istismar xərclərini azaldır')
+    ],
     cta: t('Detay Talep Edin', 'Request Details', 'Ətraflı Məlumat Alın'),
     relatedProducts: t('Bu Çözüm için Ürünlerimiz', 'Products for This Solution', 'Bu Həll üçün Məhsullarımız'),
     relatedSolutions: t('Diğer Çözümler', 'Other Solutions', 'Digər Həllər'),
     backAll: t('Tüm Çözümlere Dön', 'Back to All Solutions', 'Bütün Həllərə Qayıt')
-    cta: isTrOrAz ? 'Ətraflı Məlumat Alın' : 'Request Details',
-    relatedProducts: isTrOrAz ? 'Bu Həll üçün Məhsullarımız' : 'Products for This Solution',
-    relatedSolutions: isTrOrAz ? 'Digər Həllər' : 'Other Solutions',
-    backAll: isTrOrAz ? 'Bütün Həllərə Qayıt' : 'Back to All Solutions'
   };
 
   const solutionList = solutions?.[locale];

@@ -131,29 +131,7 @@ export const navigation = {
     { key: "industries", name: navLabels.az.industries, href: ROUTE_MAP.az.industries },
     { key: "about", name: navLabels.az.about, href: ROUTE_MAP.az.about },
     { key: "faq", name: navLabels.az.faq, href: ROUTE_MAP.az.faq },
-    { key: "contact", name: navLabels.az.contact, href: ROUTE_MAP.az.contact },
-    { name: "Home", href: "/" },
-    { name: "Valve Maintenance", href: "/vana-bakim" },
-    { name: "Products", href: "/products" },
-    { name: "Services", href: "/services" },
-    { name: "Solutions", href: "/solutions" },
-    { name: "Applications", href: "/applications" },
-    { name: "Industries", href: "/industries" },
-    { name: "About Us", href: "/hakkimizda" },
-    { name: "FAQ", href: "/sss" },
-    { name: "Contact", href: "/iletisim" }
-  ],
-  az: [
-    { name: "Ana Səhifə", href: "/" },
-    { name: "Vana Baxım", href: "/vana-bakim" },
-    { name: "Məhsullar", href: "/mehsullar" },
-    { name: "Xidmətlər", href: "/xidmetler" },
-    { name: "Həllər", href: "/heller" },
-    { name: "Tətbiqlər", href: "/tetbiqler" },
-    { name: "Sənayelər", href: "/industries" },
-    { name: "Haqqımızda", href: "/hakkimizda" },
-    { name: "SSS", href: "/sss" },
-    { name: "Əlaqə", href: "/iletisim" }
+    { key: "contact", name: navLabels.az.contact, href: ROUTE_MAP.az.contact }
   ]
 };
 
@@ -166,21 +144,21 @@ export const heroContent = {
     subtitle: "Çözümlerimiz, insanları, tesisleri ve dünyamızı koruyan güvenli, verimli ve sürdürülebilir manuel vana operasyonları sağlar.",
     cta: "Çözümlerimizi Görün",
     ctaLink: ROUTE_MAP.tr.solutions,
-    backgroundImage: "/images/hero/hero-bg.jpg"
+    backgroundImage: "/images/placeholder.svg"
   },
   en: {
     title: "Smart Valve Solutions",
     subtitle: "Safe, efficient and sustainable manual valve operations that protect people, plants and the planet",
     cta: "View Our Solutions",
     ctaLink: ROUTE_MAP.en.solutions,
-    backgroundImage: "/images/hero/hero-bg.jpg"
+    backgroundImage: "/images/placeholder.svg"
   },
   az: {
     title: "Ağıllı Vana Həlləri",
     subtitle: "İnsanları, müəssisələri və planetimizi qoruyan təhlükəsiz, səmərəli və dayanıqlı manual vana əməliyyatları",
     cta: "Həllərimizə Baxın",
     ctaLink: ROUTE_MAP.az.solutions,
-    backgroundImage: "/images/hero/hero-bg.jpg"
+    backgroundImage: "/images/placeholder.svg"
   }
 };
 
@@ -205,21 +183,21 @@ export const newsItems = {
       id: 1,
       title: "Tank Dip Tahliye Vanası İçin Uzaktan Vana Operatörü ile Güvenlik ve Verimlilik Dönüşümü",
       excerpt: "Bir rafineride, sorunsuz operasyonlar ve işçi güvenliği en önemli önceliktir. Sofis, bu kritik vananın operasyonunu dönüştüren bir çözüm sunarak güvenlik, verimlilik ve güvenilirlik sağladı.",
-      image: "/images/news/news-1.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.tr.news, "tank-dip-tahliye-vanasi")
     },
     {
       id: 2,
       title: "Silo ve Terminal Yüklemesinde Doğru Ürün: Yanlış Hat Açmaları Nasıl Önlenir?",
       excerpt: "Silo ve terminal yükleme operasyonlarında operatörler zaman zaman yanlış hatlara yönelerek yanlış vanaları açabiliyordu. Sofis, bu hataları ortadan kaldıran bir çözüm sundu.",
-      image: "/images/news/news-2.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.tr.news, "kamyon-yuklemesi-hassasiyet")
     },
     {
       id: 3,
       title: "Zincirli Vana Operasyonları Operatörlerinizi Nasıl Riske Atıyor?",
       excerpt: "FlexiDrive uzaktan vana operatörü, manuel vanaların güvenli ve erişilebilir bir konumdan çalıştırılmasını sağlayan güvenli ve maliyet etkin bir alternatif sunar.",
-      image: "/images/news/news-3.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.tr.news, "zincirli-vana-riskleri")
     }
   ],
@@ -228,21 +206,21 @@ export const newsItems = {
       id: 1,
       title: "Safety and Efficiency Transformation with Remote Valve Operator for Tank Bottom Drain Valve",
       excerpt: "In a refinery, seamless operations and worker safety are top priorities. Sofis delivered a solution that transformed the operation of this critical valve, ensuring safety, efficiency and reliability.",
-      image: "/images/news/news-1.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.en.news, "tank-dip-tahliye-vanasi")
     },
     {
       id: 2,
       title: "Right Product in Silo and Terminal Loading: How to Prevent Wrong Lineups?",
       excerpt: "In silo and terminal loading operations, operators could sometimes route to the wrong lines and open the wrong valves. Sofis provided a solution that eliminates these errors.",
-      image: "/images/news/news-2.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.en.news, "kamyon-yuklemesi-hassasiyet")
     },
     {
       id: 3,
       title: "How Chain Wheel Valve Operations Put Your Operators at Risk?",
       excerpt: "The FlexiDrive remote valve operator provides a safe and cost-effective alternative that allows manual valves to be operated from a safe and accessible location.",
-      image: "/images/news/news-3.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.en.news, "zincirli-vana-riskleri")
     }
   ],
@@ -251,21 +229,21 @@ export const newsItems = {
       id: 1,
       title: "Tank Alt Drenaj Vanası üçün Uzaqdan Vana Operatoru ilə Təhlükəsizlik və Səmərəlilik Dönüşümü",
       excerpt: "Rafineriyada fasiləsiz əməliyyatlar və işçi təhlükəsizliyi əsas prioritetlərdir. Sofis bu kritik vananın idarəsini dəyişdirən həll təqdim edərək təhlükəsizlik, səmərəlilik və etibarlılıq təmin edib.",
-      image: "/images/news/news-1.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.az.news, "tank-dip-tahliye-vanasi")
     },
     {
       id: 2,
       title: "Silo və Terminal Yükləməsində Doğru Məhsul: Yanlış Xətt Açmalarının Qarşısını Necə Almalı?",
       excerpt: "Silo və terminal yükləmə əməliyyatlarında operatorlar bəzən yanlış xətlərə yönələrək səhv vanaları açırdılar. Sofis bu səhvləri aradan qaldıran həll təqdim etdi.",
-      image: "/images/news/news-2.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.az.news, "kamyon-yuklemesi-hassasiyet")
     },
     {
       id: 3,
       title: "Zəncirli Vana Əməliyyatları Operatorlarınızı Necə Risk Altına Alır?",
       excerpt: "FlexiDrive uzaqdan vana operatoru manual vanaların təhlükəsiz və əlçatan yerdən idarə olunmasını təmin edən təhlükəsiz və sərfəli alternativdir.",
-      image: "/images/news/news-3.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.az.news, "zincirli-vana-riskleri")
     }
   ]
@@ -641,49 +619,49 @@ export const solutions = {
       id: 1,
       title: "Güvenli Vana Operasyonlarını Zorunlu Kılın",
       description: "Kilitli anahtar çözümleri, önceden tanımlanmış bir operasyon sırasını mekanik olarak zorunlu kılar. Vana kilitleri, operatörlerin yanlış sırada veya yanlış vanayı açmasını fiziksel olarak imkansız hale getirir. Anahtar, bir vanadan çıkarılmadan diğer vanaya takılamaz - bu sayede her adım doğru sırada tamamlanmak zorundadır. Shell, BP ve ExxonMobil gibi global enerji devleri bu sistemi standart olarak belirlemiştir. Proses güvenliğinizi insan faktöründen bağımsız hale getirin.",
-      image: "/images/solutions/safe-operation.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.tr.solutions, "guvenli-vana-operasyonu")
     },
     {
       id: 2,
       title: "Manuel Vana Pozisyonlarını İzleyin",
       description: "Vana Pozisyon Göstergeleri (VPI), manuel vanalarınızın açık ve kapalı konumunu gerçek zamanlı olarak kontrol odanıza raporlar. Kritik vanaların beklenmedik şekilde konumunu değiştirmesi durumunda anında alarm verir. DCS ve SCADA sistemlerinize 4-20mA, HART veya dijital çıkışlarla kolayca entegre olur. Tesis genelinde yüzlerce vananın durumunu tek bir ekrandan izleyerek operasyonel görünürlüğünüzü maksimize edin. Plansız duruşların ve güvenlik ihlallerinin önüne geçin.",
-      image: "/images/solutions/position-monitoring.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.tr.solutions, "vana-pozisyon-izleme")
     },
     {
       id: 3,
       title: "Manuel Vanaları Hızlı Çalıştırın",
       description: "Taşınabilir vana aktüatörlerimiz ile operatör verimliliğini ve konforunu artırın. Büyük el çarklı vanaların manuel çalıştırılması saatler sürebilir ve ciddi fiziksel zorlanmalara neden olabilir. EasiDrive ve Power Wrench aktüatörleri, vana çalıştırma süresini %80'e kadar azaltır. Batarya veya basınçlı hava ile çalışan bu taşınabilir cihazlar, tek operatör tarafından kolayca taşınabilir. Tesis duruşlarınızı kısaltın, iş gücü maliyetlerinizi düşürün ve çalışan sağlığını koruyun.",
-      image: "/images/solutions/quick-operation.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.tr.solutions, "hizli-vana-operasyonu")
     },
     {
       id: 4,
       title: "Manuel Vanaları Uzaktan Çalıştırın",
       description: "Uzaktan vana çalıştırma sistemlerimiz ile tehlikeli veya ulaşılması zor alanlardaki vanalarınızı güvenli mesafeden kontrol edin. FlexiDrive esnek şaft sistemleri 30 metreye kadar mesafeden vana operasyonu sağlar. Yüksek sıcaklık bölgeleri, kimyasal maruz kalma riski olan alanlar, dar geçitler ve yüksek rakımlı konumlar için idealdir. Operatörlerinizi tehlikeden uzak tutarken, vana erişilebilirliğini artırın. Zincir çarklı eski sistemlere modern ve güvenli bir alternatif sunuyoruz.",
-      image: "/images/solutions/remote-operation.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.tr.solutions, "uzaktan-vana-operasyonu")
     },
     {
       id: 5,
       title: "Kritik Güvenlik Sistemi Bütünlüğünü Sağlayın",
       description: "Sofis vana kilitleme sistemleri, endüstrinin IEC 61511, API 554 ve OSHA gibi katı güvenlik düzenlemelerine uymasına yardımcı olur. SIL (Safety Integrity Level) gereksinimlerini karşılayan sertifikalı çözümlerimiz, güvenlik denetimlerinde kanıt olarak kullanılabilir. Proses tehlike analizlerinizde (HAZOP) belirlenen riskleri mekanik olarak azaltır. Yasal uyumluluk cezalarından kaçının, sigorta primlerinizi düşürün ve en önemlisi çalışanlarınızı ve çevreyi koruyun.",
-      image: "/images/solutions/safety-integrity.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.tr.solutions, "guvenlik-butunlugu")
     },
     {
       id: 6,
       title: "Operasyonel Verimliliği Sağlayın",
       description: "Sofis vana kilit denetim programları, istenmeyen, maliyetli ve tehlikeli durumları proaktif olarak önler. Düzenli denetimler ile kilitlerinizin durumunu değerlendirin, arızaları erken tespit edin ve bakım planlamanızı optimize edin. Dijital anahtar yönetim sistemleri ile tüm operasyonları kayıt altına alın, verimlilik metriklerini analiz edin ve sürekli iyileştirme fırsatlarını belirleyin. Plansız duruşları minimize ederek üretim kaybını önleyin ve toplam sahip olma maliyetinizi düşürün.",
-      image: "/images/solutions/operational-efficiency.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.tr.solutions, "operasyonel-verimlilik")
     },
     {
       id: 7,
       title: "İnsan Hatasının Etkilerini Azaltın",
       description: "İnsan hatası, endüstriyel kazaların %80'inden fazlasının temel nedenidir. Sofis çözümleri, vana sistemlerini anlamak için operatörler ve bakım ekiplerine kapsamlı eğitim programları sunar. Ancak eğitimin ötesinde, mekanik kilitleme sistemlerimiz insan hatasını fiziksel olarak imkansız hale getirir. Yorgunluk, dikkat dağınıklığı veya deneyimsizlik gibi faktörlerden bağımsız olarak, doğru prosedürlerin her zaman takip edilmesini garanti eder. Güvenliği kişisel disipline değil, mühendislik kontrollerine bırakın.",
-      image: "/images/solutions/human-error.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.tr.solutions, "insan-hatasi-azaltma")
     }
   ],
@@ -692,49 +670,49 @@ export const solutions = {
       id: 1,
       title: "Enforce Safe Valve Operations",
       description: "Trapped key interlock solutions mechanically enforce a predefined sequence of operations. Valve interlocks make it physically impossible for operators to open the wrong valve or open valves in the wrong sequence. A key cannot be inserted into another valve without being removed from one valve - this ensures each step must be completed in the correct order. Global energy giants such as Shell, BP and ExxonMobil have designated this system as standard. Make your process safety independent of human factors.",
-      image: "/images/solutions/safe-operation.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.en.solutions, "guvenli-vana-operasyonu")
     },
     {
       id: 2,
       title: "Monitor Manual Valve Positions",
       description: "Valve Position Indicators (VPI) report the open and closed position of your manual valves to your control room in real-time. They immediately alarm if critical valves unexpectedly change position. They easily integrate with your DCS and SCADA systems via 4-20mA, HART or digital outputs. Maximize your operational visibility by monitoring the status of hundreds of valves across your facility from a single screen. Prevent unplanned shutdowns and safety violations.",
-      image: "/images/solutions/position-monitoring.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.en.solutions, "vana-pozisyon-izleme")
     },
     {
       id: 3,
       title: "Operate Manual Valves Quickly",
       description: "Increase operator efficiency and comfort with our portable valve actuators. Manual operation of large handwheel valves can take hours and cause serious back injuries. EasiDrive and Power Wrench actuators reduce valve operating time by up to 80%. These portable devices, powered by battery or compressed air, can be easily carried by a single operator. Shorten your plant shutdowns, reduce labor costs and protect employee health.",
-      image: "/images/solutions/quick-operation.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.en.solutions, "hizli-vana-operasyonu")
     },
     {
       id: 4,
       title: "Operate Manual Valves Remotely",
       description: "Control your valves in hazardous or hard-to-reach areas from a safe distance with our remote valve operating systems. FlexiDrive flexible shaft systems provide valve operation from up to 30 meters away. Ideal for high temperature zones, areas with chemical exposure risk, narrow passages and high altitude locations. Increase valve accessibility while keeping your operators away from danger. We offer a modern and safe alternative to old chain wheel systems.",
-      image: "/images/solutions/remote-operation.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.en.solutions, "uzaktan-vana-operasyonu")
     },
     {
       id: 5,
       title: "Ensure Critical Safety System Integrity",
       description: "Sofis valve interlocking systems help industry comply with strict safety regulations such as IEC 61511, API 554 and OSHA. Our certified solutions that meet SIL (Safety Integrity Level) requirements can be used as evidence in safety audits. They mechanically reduce risks identified in your process hazard analyses (HAZOP). Avoid legal compliance penalties, lower your insurance premiums and most importantly protect your employees and the environment.",
-      image: "/images/solutions/safety-integrity.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.en.solutions, "guvenlik-butunlugu")
     },
     {
       id: 6,
       title: "Ensure Operational Efficiency",
       description: "Sofis valve interlock audit programs proactively prevent unwanted, costly and dangerous situations. Assess the condition of your interlocks with regular audits, detect failures early and optimize your maintenance planning. Record all operations with digital key management systems, analyze efficiency metrics and identify continuous improvement opportunities. Minimize unplanned shutdowns to prevent production losses and reduce your total cost of ownership.",
-      image: "/images/solutions/operational-efficiency.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.en.solutions, "operasyonel-verimlilik")
     },
     {
       id: 7,
       title: "Reduce the Effects of Human Error",
       description: "Human error is the root cause of over 80% of industrial accidents. Sofis solutions offer comprehensive training programs for operators and maintenance teams to understand valve systems. But beyond training, our mechanical interlocking systems make human error physically impossible. Regardless of factors such as fatigue, distraction or inexperience, it guarantees that correct procedures are always followed. Leave safety to engineering controls, not personal discipline.",
-      image: "/images/solutions/human-error.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.en.solutions, "insan-hatasi-azaltma")
     }
   ]
@@ -750,7 +728,7 @@ export const industries = {
       name: "Enerji ve Proses",
       description:
         "Rafineri, petrokimya ve enerji santrallerinde tek bir yanlış vana hareketi; milyonlarca liralık duruşa ve güvenlik olaylarına neden olabilir. Sofis çözümleriyle kritik izinli operasyonları mekanik olarak kilitleyerek, üretim sürenizi uzatır ve bakım duruşlarını daha öngörülebilir hale getirirsiniz.",
-      image: "/images/industries/energy-process.jpg",
+      image: "/images/placeholder.svg",
       link: "/industries/enerji-proses"
     },
     {
@@ -758,7 +736,7 @@ export const industries = {
       name: "Tank Depolama",
       description:
         "Tank çiftliklerinde yanlış vana hattı, yanlış tank dolumu ve taşma riskini beraberinde getirir. Vana kilitleri ve uzaktan operatör çözümleriyle yükleme/boşaltma operasyonlarını güvenli adımlara böler, hem operatörü hem de çevreyi korursunuz.",
-      image: "/images/industries/tank-storage.jpg",
+      image: "/images/placeholder.svg",
       link: "/industries/tank-depolama"
     },
     {
@@ -766,7 +744,7 @@ export const industries = {
       name: "Su ve Atıksu",
       description:
         "İçme suyu ve atıksu tesislerinde kimyasal dozaj, hat geçişleri ve bakım operasyonları hassasiyet ister. Sofis çözümleri, doğru vana hattı düzenini zorunlu kılarak hem su kalitesini hem de operatör güvenliğini korumanıza yardımcı olur.",
-      image: "/images/industries/water.jpg",
+      image: "/images/placeholder.svg",
       link: "/industries/su-atiksu"
     },
     {
@@ -774,7 +752,7 @@ export const industries = {
       name: "EPC Projeleri",
       description:
         "Büyük projelerde vana kilit kapsamının sonradan eklenmesi pahalı ve zordur. Demart olarak EPC ekipleriyle tasarım aşamasında çalışarak Sofis çözümlerini P&ID’lere entegre eder, şantiyede hatasız montaj ve devreye alma sağlarız.",
-      image: "/images/industries/epc.jpg",
+      image: "/images/placeholder.svg",
       link: "/industries/epc-projeleri"
     },
     {
@@ -782,7 +760,7 @@ export const industries = {
       name: "Hidrojen",
       description:
         "Yeşil hidrojen üretimi ve taşınması, yüksek basınç ve yanıcılık nedeniyle ekstra güvenlik ister. Vana kilitleri ve izleme çözümleriyle kritik hatlarda yanlış operasyon riskini azaltır, yeni nesil enerji projelerinizde güvenliği ilk günden tasarlarsınız.",
-      image: "/images/industries/hydrogen.jpg",
+      image: "/images/placeholder.svg",
       link: "/industries/hidrojen"
     },
     {
@@ -790,7 +768,7 @@ export const industries = {
       name: "Karbon Yakalama",
       description:
         "Karbon yakalama, taşıma ve depolama hatlarında yanlış vana hattı; ısı eşanjörlerinde aşırı basınç ve proses dengesizliği yaratabilir. Sofis çözümleri ile kritik devreye alma ve devreden çıkarma adımlarını kilitleyerek bu riskleri kontrol altına alırsınız.",
-      image: "/images/industries/carbon-capture.jpg",
+      image: "/images/placeholder.svg",
       link: "/industries/karbon-yakalama"
     },
     {
@@ -798,7 +776,7 @@ export const industries = {
       name: "Kimya",
       description:
         "Kimya tesislerinde birden fazla ham madde, reaktör ve yardımcı sistem aynı anda devrededir. Sofis ürünleri, bu karmaşık yapıda manuel vana operasyonlarını standartlaştırarak insan hatasını azaltır ve proses güvenliğinizi güçlendirir.",
-      image: "/images/industries/chemical.jpg",
+      image: "/images/placeholder.svg",
       link: "/industries/kimya"
     },
     {
@@ -806,7 +784,7 @@ export const industries = {
       name: "Denizcilik ve FPSO",
       description:
         "Gemi ve FPSO’larda sınırlı alan, zor erişilen vanalar ve zorlu hava koşulları standardın bir parçasıdır. Uzaktan operatörler ve kilit çözümleri sayesinde güverte altındaki ve yüksek konumdaki vanaları güvenli bir noktadan çalıştırarak, denizde de karadaki kadar kontrollü operasyon sağlarsınız.",
-      image: "/images/industries/marine.jpg",
+      image: "/images/placeholder.svg",
       link: "/sektorler/denizcilik-fpso"
     }
   ],
@@ -816,7 +794,7 @@ export const industries = {
       name: "Energy and Process",
       description:
         "In refineries, petrochemical plants and power stations, a single wrong valve operation can lead to millions in lost production and serious safety incidents. With Sofis solutions you mechanically lock critical permitted operations, extending asset life and making shutdowns more predictable.",
-      image: "/images/industries/energy-process.jpg",
+      image: "/images/placeholder.svg",
       link: "/industries/enerji-proses"
     },
     {
@@ -824,7 +802,7 @@ export const industries = {
       name: "Tank Storage",
       description:
         "In tank farms, an incorrect valve line-up can result in filling the wrong tank or causing an overflow. Valve interlocks and remote operators break loading and unloading into safe, verifiable steps, protecting both operators and the environment.",
-      image: "/images/industries/tank-storage.jpg",
+      image: "/images/placeholder.svg",
       link: "/industries/tank-depolama"
     },
     {
@@ -832,7 +810,7 @@ export const industries = {
       name: "Water and Wastewater",
       description:
         "Drinking water and wastewater plants require precise control of chemical dosing, line changes and maintenance operations. Sofis solutions enforce the correct valve line-up so you can protect water quality while keeping your operators safe.",
-      image: "/images/industries/water.jpg",
+      image: "/images/placeholder.svg",
       link: "/industries/su-atiksu"
     },
     {
@@ -840,7 +818,7 @@ export const industries = {
       name: "EPC Projects",
       description:
         "Adding valve interlock scope late in a project is costly and complex. Working with EPC teams at the design stage, Demart integrates Sofis solutions into the P&IDs and ensures flawless installation and commissioning on site.",
-      image: "/images/industries/epc.jpg",
+      image: "/images/placeholder.svg",
       link: "/industries/epc-projeleri"
     },
     {
@@ -848,7 +826,7 @@ export const industries = {
       name: "Hydrogen",
       description:
         "Green hydrogen production and transportation involve high pressures and flammable media that demand extra safety. With valve interlocks and monitoring solutions you reduce the risk of incorrect operations on critical lines and build safety into your new energy projects from day one.",
-      image: "/images/industries/hydrogen.jpg",
+      image: "/images/placeholder.svg",
       link: "/industries/hidrojen"
     },
     {
@@ -856,7 +834,7 @@ export const industries = {
       name: "Carbon Capture",
       description:
         "In carbon capture, transport and storage systems, an incorrect line-up can overpressure heat exchangers and destabilize the process. Sofis solutions lock in the correct start-up and shutdown steps so you keep these emerging assets under tight control.",
-      image: "/images/industries/carbon-capture.jpg",
+      image: "/images/placeholder.svg",
       link: "/industries/karbon-yakalama"
     },
     {
@@ -864,7 +842,7 @@ export const industries = {
       name: "Chemical",
       description:
         "Chemical plants run multiple feed streams, reactors and utility systems simultaneously. Sofis products standardize manual valve operations in this complex environment, reducing human error and strengthening your overall process safety.",
-      image: "/images/industries/chemical.jpg",
+      image: "/images/placeholder.svg",
       link: "/industries/kimya"
     },
     {
@@ -872,7 +850,7 @@ export const industries = {
       name: "Marine and FPSO",
       description:
         "On ships and FPSOs, limited space, hard-to-reach valves and harsh conditions are part of daily reality. Remote operators and valve interlocks allow you to operate valves in confined or exposed areas from safe locations, delivering the same level of control offshore as you have onshore.",
-      image: "/images/industries/marine.jpg",
+      image: "/images/placeholder.svg",
       link: "/industries/denizcilik-fpso"
     }
   ]
@@ -888,7 +866,7 @@ export const applications = {
       title: "Basınç Tahliye Vanalarının Güvenli İzolasyonu",
       description:
         "Tahliye vanaları, proses ekipmanınızı aşırı basınçtan koruyan son savunma hattıdır. Bakım veya kalibrasyon için devre dışı alındıklarında bile sisteminizin koruma altında kalması gerekir. Sofis çözümleriyle yedek tahliye vanasına geçiş sıranıza kilit koyar, yanlış vana kombinasyonlarını fiziksel olarak imkânsız hale getirirsiniz. Böylece operatör prosedüre uymasa bile ekipmanınız ve tesisiniz korunur.",
-      image: "/images/applications/pressure-relief.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.tr.applications, "basinc-tahliye-vanalari")
     },
     {
@@ -896,7 +874,7 @@ export const applications = {
       title: "Güvenli Pompa Başlatma Operasyonları",
       description:
         "Pompalar, tesisinizin kalbi gibidir; yanlış vana hattı ile başlatıldıklarında ciddi mekanik hasar, sızıntı ve duruşa neden olabilirler. Sofis vana kilitleri, pompa devreye alınmadan önce emiş, deşarj ve bypass hatlarının doğru sırayla açılmasını zorunlu kılar. Operatör, yanlış vanayı açsa bile sistem buna izin vermez, böylece pompa ve prosesiniz ilk seferde doğru şekilde çalışır.",
-      image: "/images/applications/pump-start.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.tr.applications, "pompa-baslatma")
     },
     {
@@ -904,7 +882,7 @@ export const applications = {
       title: "Büyük Manuel Vanaların Güvenli Çalıştırılması",
       description:
         "Büyük el çarklı vanaların elle çevrilmesi hem zaman alıcı hem de operatör sağlığı için risklidir. Ağır vanaları zorlayarak çevirmek, sırt ve omuz zorlanmalarına ve hatalı pozisyonlamaya yol açabilir. Taşınabilir aktüatör çözümlerimizle bu vanalar dakikalar içinde, kontrollü torkla ve minimum eforla çalıştırılır. Böylece hem iş güvenliği artar hem de bakım ve operasyon süreleri kısalır.",
-      image: "/images/applications/large-valves.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.tr.applications, "buyuk-vanalar")
     },
     {
@@ -912,7 +890,7 @@ export const applications = {
       title: "Isı Eşanjörlerinin Aşırı Basınçlanmasını Önleme",
       description:
         "Paralel bağlı ısı eşanjörleri arasında geçiş yaparken, yanlış vana kombinasyonları boru demetlerinde aşırı basınç ve ciddi hasar oluşturabilir. Sofis kilit sistemleri, devreden çıkan eşanjör ile devreye giren eşanjörün vanaları arasında güvenli bir anahtar sırası kurar. Operatör yalnızca doğru sırayı takip ettiğinde anahtar serbest kalır ve proses kesintisiz, güvenli şekilde devam eder.",
-      image: "/images/applications/heat-exchangers.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.tr.applications, "isi-esanjoru")
     },
     {
@@ -920,7 +898,7 @@ export const applications = {
       title: "Ulaşılması Zor Vanaları Çalıştırma",
       description:
         "Merdivenle çıkılan platformlar, çukurlar veya tavan arasındaki vanalar hem erişim hem de güvenlik açısından risklidir. FlexiDrive gibi uzaktan operatör çözümleriyle, bu vanaların el çarkları güvenli bir noktaya taşınır ve operatörünüz zeminden ayrılmadan vanayı kullanır. Böylece düşme, sıkışma ve kimyasal maruziyet riskleri önemli ölçüde azalır.",
-      image: "/images/applications/hard-to-reach.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.tr.applications, "ulasimi-zor-vanalar")
     },
     {
@@ -928,7 +906,7 @@ export const applications = {
       title: "Kimyasal Boşaltma Sırasında Güvenli Hat Düzenlemeleri",
       description:
         "Tankerden tesise kimyasal boşaltırken yapılacak tek bir hatalı vana hareketi, yanlış tankın dolmasına veya kimyasal karışmasına neden olabilir. Vana kilitleme sistemlerimiz, hortum bağlantısından boşaltma hattına kadar tüm adımları belirli bir sıraya bağlı kılar. Operatör, yalnızca doğru hat düzenini kurduğunda anahtarlar serbest kalır ve kimyasal güvenle transfer edilir.",
-      image: "/images/applications/chemical-offload.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.tr.applications, "kimyasal-bosaltma")
     },
     {
@@ -986,7 +964,7 @@ export const applications = {
       title: "Safe Isolation of Pressure Relief Valves",
       description:
         "Pressure relief valves are the last safety barrier protecting your equipment against overpressure. Even when a valve is taken out of service for maintenance or calibration, your system must remain protected. With Sofis solutions you lock the switchover sequence to the spare PRV, making incorrect valve combinations physically impossible. This ensures your plant remains protected even if the operator makes a mistake.",
-      image: "/images/applications/pressure-relief.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.en.applications, "basinc-tahliye-vanalari")
     },
     {
@@ -994,7 +972,7 @@ export const applications = {
       title: "Guaranteing Safe Pump Start-Up Operations",
       description:
         "Pumps are the heart of your process; starting them against the wrong valve line-up can cause severe mechanical damage, leaks and downtime. Sofis valve interlocks enforce the correct sequence for suction, discharge and bypass valves before the pump is started. Even if the operator tries to open the wrong valve, the system will not allow it, so your pump and process start up right the first time.",
-      image: "/images/applications/pump-start.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.en.applications, "pompa-baslatma")
     },
     {
@@ -1002,7 +980,7 @@ export const applications = {
       title: "Safe Operation of Large Manual Valves",
       description:
         "Operating large handwheel valves manually is time-consuming and physically demanding, often leading to back and shoulder injuries as well as incorrect valve positioning. Our portable actuator solutions allow these valves to be operated within minutes with controlled torque and minimal effort. This improves safety for your operators while significantly reducing shutdown and maintenance durations.",
-      image: "/images/applications/large-valves.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.en.applications, "buyuk-vanalar")
     },
     {
@@ -1010,7 +988,7 @@ export const applications = {
       title: "Preventing Over-Pressurisation of Heat Exchangers",
       description:
         "When switching between parallel heat exchangers, an incorrect valve combination can cause tube bundle overpressure and serious damage. Sofis interlock systems create a safe key sequence between the valves of the exchanger going offline and the one coming online. The operator can only complete the switchover when the correct sequence is followed, keeping your process running safely and continuously.",
-      image: "/images/applications/heat-exchangers.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.en.applications, "isi-esanjoru")
     },
     {
@@ -1018,7 +996,7 @@ export const applications = {
       title: "Operating Hard-to-Reach Valves",
       description:
         "Valves located high on structures, in pits or above pipe racks are difficult and sometimes dangerous to access. Solutions such as FlexiDrive remote operators bring the handwheel down to a safe working location so your operator can remain on the floor. This greatly reduces the risk of falls, entrapment and chemical exposure while maintaining full control over the valve.",
-      image: "/images/applications/hard-to-reach.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.en.applications, "ulasimi-zor-vanalar")
     },
     {
@@ -1026,7 +1004,7 @@ export const applications = {
       title: "Safe Line-Ups During Chemical Offloading",
       description:
         "During chemical offloading from road tankers, a single wrong valve operation can result in filling the wrong tank or mixing incompatible chemicals. Our valve interlock solutions connect all critical valves and hose connections in a defined sequence. Only when the correct line-up is established will the keys be released, ensuring that hazardous chemicals are always transferred to the right destination.",
-      image: "/images/applications/chemical-offload.jpg",
+      image: "/images/placeholder.svg",
       link: withSlug(ROUTE_MAP.en.applications, "kimyasal-bosaltma")
     },
     {
@@ -1209,4 +1187,4 @@ export const social = {
 };
 
 // LOCAL LOGO - no external dependency
-export const logo = "/images/brand/logo.jpg";
+export const logo = "/images/placeholder.svg";
