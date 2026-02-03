@@ -20,12 +20,12 @@ const ApplicationsPage = () => {
 
   const galleryImages = useMemo(
     () => [
-      '/images/applications/pressure-relief.jpg',
-      '/images/applications/pump-start.jpg',
-      '/images/applications/large-valves.jpg',
-      '/images/applications/heat-exchangers.jpg',
-      '/images/applications/hard-to-reach.jpg',
-      '/images/applications/chemical-offload.jpg'
+      '/images/placeholder.svg',
+      '/images/placeholder.svg',
+      '/images/placeholder.svg',
+      '/images/placeholder.svg',
+      '/images/placeholder.svg',
+      '/images/placeholder.svg'
     ],
     []
   );

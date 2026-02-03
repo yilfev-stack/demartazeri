@@ -183,8 +183,6 @@ const PrivacyPolicyPage = () => {
   const { locale, t } = useLanguage();
   const data = content?.[locale];
   const hasContent = Boolean(data);
-  const { language } = useLanguage();
-  const isTrOrAz = language === 'tr' || language === 'az';
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -271,7 +269,7 @@ const PrivacyPolicyPage = () => {
                   <strong>E-posta:</strong> <a href={`mailto:${data.contact.email}`} className="text-[#00a0e3] hover:underline">{data.contact.email}</a>
                 </p>
                 <p className="text-gray-700 mt-2">
-                  <strong>{isTrOrAz ? 'Ünvan:' : 'Address:'}</strong> {data.contact.address}
+                  <strong>{t('Adres:', 'Address:', 'Ünvan:')}</strong> {data.contact.address}
                 </p>
 
               </div>

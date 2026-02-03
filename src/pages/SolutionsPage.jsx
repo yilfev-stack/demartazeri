@@ -14,8 +14,6 @@ const SolutionsPage = () => {
   const text = ui?.[locale];
   const routes = ROUTE_MAP[locale];
   const hasSolutions = Array.isArray(solutionList) && solutionList.length > 0;
-  const { language } = useLanguage();
-  const isTrOrAz = language === 'tr' || language === 'az';
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -28,25 +26,17 @@ const SolutionsPage = () => {
             ) : (
               <>
                 <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                  {t('Həllər', 'Solutions', 'Həllər')}
+                  {t('Çözümler', 'Solutions', 'Həllər')}
                 </h1>
                 <p className="text-white/90 text-lg">
                   {t(
-                    'Vana əməliyyat həllərimiz müəssisənizi mümkün qədər səmərəli və təhlükəsiz işlətməyə kömək edir.',
+                    'Vana operasyon çözümlerimiz tesisinizi mümkün olan en verimli ve güvenli şekilde çalıştırmanıza yardımcı olur.',
                     'Our valve operation solutions help you run your facility as efficiently and safely as possible.',
                     'Vana əməliyyat həllərimiz müəssisənizi mümkün qədər səmərəli və təhlükəsiz işlətməyə kömək edir.'
                   )}
                 </p>
               </>
             )}
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {isTrOrAz ? 'Həllər' : 'Solutions'}
-            </h1>
-            <p className="text-white/90 text-lg">
-              {isTrOrAz
-                ? 'Vana əməliyyat həllərimiz müəssisənizi mümkün qədər səmərəli və təhlükəsiz işlətməyə kömək edir.'
-                : 'Our valve operation solutions help you run your facility as efficiently and safely as possible.'}
-            </p>
           </div>
         </section>
 
@@ -89,9 +79,9 @@ const SolutionsPage = () => {
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">{text.howCanWeHelp}</h2>
                 <p className="text-gray-600 mb-6">
                   {t(
-                    '30 ildən artıq təcrübəmizlə ağıllı vana əməliyyatları qurmağınıza kömək edə bilərik.',
+                    '30 yılı aşkın tecrübemizle akıllı vana operasyonları kurmanıza yardımcı olabiliriz.',
                     'With over 30 years of experience, we can help you create smart valve operations.',
-                    '30 ildən artıq təcrübəmizlə ağıllı vana əməliyyatları qurmağınıza kömək edə bilərik.'
+                    '30 ildən artıq təcrübəmizlə ağıllı vana əməliyyatlarını qurmağınıza kömək edə bilərik.'
                   )}
                 </p>
                 <Link to={routes.contact} className="inline-flex items-center px-6 py-3 bg-[#00a0e3] text-white font-semibold rounded hover:bg-[#0090d0] transition-colors">
@@ -100,16 +90,6 @@ const SolutionsPage = () => {
                 </Link>
               </>
             )}
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">{text.howCanWeHelp}</h2>
-            <p className="text-gray-600 mb-6">
-              {isTrOrAz
-                ? '30 ildən artıq təcrübəmizlə ağıllı vana əməliyyatları qurmağınıza kömək edə bilərik.'
-                : 'With over 30 years of experience, we can help you create smart valve operations.'}
-            </p>
-            <Link to="/iletisim" className="inline-flex items-center px-6 py-3 bg-[#00a0e3] text-white font-semibold rounded hover:bg-[#0090d0] transition-colors">
-              {text.contact}
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
           </div>
         </section>
       </main>

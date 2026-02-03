@@ -21,69 +21,49 @@ const iconMap = {
 };
 
 const DocumentationPage = () => {
-  const { locale } = useLanguage();
+  const { locale, t } = useLanguage();
   const routes = ROUTE_MAP[locale];
   const company = companyInfo?.[locale];
-  const { language } = useLanguage();
-  const isTrOrAz = language === 'tr' || language === 'az';
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const t = {
-    tr: {
-      title: "Dokümantasyon Merkezi",
-      subtitle: "Ürün katalogları, teknik çizimler, sertifikalar ve kullanım kılavuzları",
-      searchPlaceholder: "Döküman ara...",
-      featured: "Öne Çıkan Dökümanlar",
-      categories: "Kategoriler",
-      allDocs: "Tüm Dökümanlar",
-      docsFound: "döküman bulundu",
-      requestDownload: "Talep Et / İndir",
-      noDocsTitle: "Döküman Bulunamadı",
-      noDocsDesc: "Arama kriterlerinize uygun döküman bulunamadı.",
-      ctaTitle: "Aradığınız Dökümanı Bulamadınız mı?",
-      ctaDesc: "Özel teknik döküman talepleri için bizimle iletişime geçin.",
-      contact: "İletişime Geçin",
-      docRequest: "Döküman Talebi",
-      requestBody: "Merhaba,\n\nAşağıdaki dökümanı talep ediyorum:\n\nDöküman: {title}\nKategori: {category}\n\nLütfen benimle iletişime geçin.\n\nTeşekkürler."
-    },
-    en: {
-      title: "Documentation Center",
-      subtitle: "Product catalogs, technical drawings, certificates and user manuals",
-      searchPlaceholder: "Search documents...",
-      featured: "Featured Documents",
-      categories: "Categories",
-      allDocs: "All Documents",
-      docsFound: "documents found",
-      requestDownload: "Request / Download",
-      noDocsTitle: "No Documents Found",
-      noDocsDesc: "No documents match your search criteria.",
-      ctaTitle: "Can't Find the Document You're Looking For?",
-      ctaDesc: "Contact us for special technical document requests.",
-      contact: "Contact Us",
-      docRequest: "Document Request",
-      requestBody: "Hello,\n\nI am requesting the following document:\n\nDocument: {title}\nCategory: {category}\n\nPlease contact me.\n\nThank you."
-    },
-    az: {
-      title: "Dokümantasiya Mərkəzi",
-      subtitle: "Məhsul kataloqları, texniki cizgilər, sertifikatlar və istifadəçi bələdçiləri",
-      searchPlaceholder: "Sənəd axtarın...",
-      featured: "Seçilmiş Sənədlər",
-      categories: "Kateqoriyalar",
-      allDocs: "Bütün Sənədlər",
-      docsFound: "sənəd tapıldı",
-      requestDownload: "Tələb Et / Yüklə",
-      noDocsTitle: "Sənəd Tapılmadı",
-      noDocsDesc: "Axtarış kriteriyalarınıza uyğun sənəd tapılmadı.",
-      ctaTitle: "Axtardığınız Sənədi Tapmadınız?",
-      ctaDesc: "Xüsusi texniki sənəd tələbləri üçün bizimlə əlaqə saxlayın.",
-      contact: "Bizimlə Əlaqə",
-      docRequest: "Sənəd Tələbi",
-      requestBody: "Salam,\n\nAşağıdakı sənədi tələb edirəm:\n\nSənəd: {title}\nKateqoriya: {category}\n\nZəhmət olmasa mənimlə əlaqə saxlayın.\n\nTəşəkkürlər."
-    }
+  const text = {
+    title: t('Dokümantasyon Merkezi', 'Documentation Center', 'Dokümantasiya Mərkəzi'),
+    subtitle: t(
+      'Ürün katalogları, teknik çizimler, sertifikalar ve kullanım kılavuzları',
+      'Product catalogs, technical drawings, certificates and user manuals',
+      'Məhsul kataloqları, texniki çertyojlar, sertifikatlar və istifadəçi bələdçiləri'
+    ),
+    searchPlaceholder: t('Döküman ara...', 'Search documents...', 'Sənəd axtarın...'),
+    featured: t('Öne Çıkan Dökümanlar', 'Featured Documents', 'Seçilmiş Sənədlər'),
+    categories: t('Kategoriler', 'Categories', 'Kateqoriyalar'),
+    allDocs: t('Tüm Dökümanlar', 'All Documents', 'Bütün Sənədlər'),
+    docsFound: t('döküman bulundu', 'documents found', 'sənəd tapıldı'),
+    requestDownload: t('Talep Et / İndir', 'Request / Download', 'Tələb Et / Yüklə'),
+    noDocsTitle: t('Döküman Bulunamadı', 'No Documents Found', 'Sənəd Tapılmadı'),
+    noDocsDesc: t(
+      'Arama kriterlerinize uygun döküman bulunamadı.',
+      'No documents match your search criteria.',
+      'Axtarış kriteriyalarınıza uyğun sənəd tapılmadı.'
+    ),
+    ctaTitle: t(
+      'Aradığınız Dökümanı Bulamadınız mı?',
+      "Can't Find the Document You're Looking For?",
+      'Axtardığınız Sənədi Tapmadınız?'
+    ),
+    ctaDesc: t(
+      'Özel teknik döküman talepleri için bizimle iletişime geçin.',
+      'Contact us for special technical document requests.',
+      'Xüsusi texniki sənəd tələbləri üçün bizimlə əlaqə saxlayın.'
+    ),
+    contact: t('İletişime Geçin', 'Contact Us', 'Bizimlə Əlaqə'),
+    docRequest: t('Döküman Talebi', 'Document Request', 'Sənəd Tələbi'),
+    requestBody: t(
+      'Merhaba,\n\nAşağıdaki dökümanı talep ediyorum:\n\nDöküman: {title}\nKategori: {category}\n\nLütfen benimle iletişime geçin.\n\nTeşekkürler.',
+      'Hello,\n\nI am requesting the following document:\n\nDocument: {title}\nCategory: {category}\n\nPlease contact me.\n\nThank you.',
+      'Salam,\n\nAşağıdakı sənədi tələb edirəm:\n\nSənəd: {title}\nKateqoriya: {category}\n\nZəhmət olmasa mənimlə əlaqə saxlayın.\n\nTəşəkkürlər.'
+    )
   };
-
-  const text = t?.[locale];
 
   const documentCategoriesByLocale = {
     tr: [
@@ -111,73 +91,40 @@ const DocumentationPage = () => {
 
   const documentsByLocale = {
     tr: [
-      { id: 1, title: 'Sofis Vana Kilitleri Genel Kataloğu', category: 'catalog', fileType: 'PDF', fileSize: '8.5 MB', language: 'TR/EN', thumbnail: '/images/docs/catalog-1.jpg', description: 'Tüm Sofis vana kilitleri ürün hattı', featured: true },
-      { id: 2, title: 'EasiDrive Taşınabilir Aktüatör', category: 'catalog', fileType: 'PDF', fileSize: '3.2 MB', language: 'TR/EN', thumbnail: '/images/docs/catalog-2.jpg', description: 'EasiDrive taşınabilir vana aktüatörü teknik detaylar', featured: true },
-      { id: 3, title: 'FlexiDrive Uzaktan Vana Operatörü', category: 'catalog', fileType: 'PDF', fileSize: '2.8 MB', language: 'TR/EN', thumbnail: '/images/products/flexidrive.jpg', description: 'FlexiDrive uzaktan vana işletme sistemi', featured: true },
-      { id: 4, title: 'VPI Pozisyon Göstergesi Kataloğu', category: 'catalog', fileType: 'PDF', fileSize: '1.9 MB', language: 'TR/EN', thumbnail: '/images/products/vpi.jpg', description: 'Vana pozisyon göstergeleri ürün serisi', featured: true },
-      { id: 5, title: 'Smith Interlock Teknik Çizimleri', category: 'technical', fileType: 'PDF', fileSize: '12.3 MB', language: 'EN', thumbnail: '/images/docs/technical.jpg', description: 'CAD formatında teknik çizimler' },
-      { id: 6, title: 'ATEX/IECEx Sertifikası', category: 'certificate', fileType: 'PDF', fileSize: '450 KB', language: 'EN', thumbnail: '/images/docs/certificate-1.jpg', description: 'Patlayıcı ortam sertifikası' },
-      { id: 7, title: 'ISO 9001:2015 Kalite Sertifikası', category: 'certificate', fileType: 'PDF', fileSize: '320 KB', language: 'EN', thumbnail: '/images/docs/certificate-2.jpg', description: 'Kalite yönetim sistemi sertifikası' },
-      { id: 8, title: 'Vana Kilidi Kurulum Kılavuzu', category: 'manual', fileType: 'PDF', fileSize: '5.6 MB', language: 'TR', thumbnail: '/images/docs/manual.jpg', description: 'Adım adım kurulum talimatları' }
+      { id: 1, title: 'Sofis Vana Kilitleri Genel Kataloğu', category: 'catalog', fileType: 'PDF', fileSize: '8.5 MB', language: 'TR/EN', thumbnail: '/images/placeholder.svg', description: 'Tüm Sofis vana kilitleri ürün hattı', featured: true },
+      { id: 2, title: 'EasiDrive Taşınabilir Aktüatör', category: 'catalog', fileType: 'PDF', fileSize: '3.2 MB', language: 'TR/EN', thumbnail: '/images/placeholder.svg', description: 'EasiDrive taşınabilir vana aktüatörü teknik detaylar', featured: true },
+      { id: 3, title: 'FlexiDrive Uzaktan Vana Operatörü', category: 'catalog', fileType: 'PDF', fileSize: '2.8 MB', language: 'TR/EN', thumbnail: '/images/placeholder.svg', description: 'FlexiDrive uzaktan vana işletme sistemi', featured: true },
+      { id: 4, title: 'VPI Pozisyon Göstergesi Kataloğu', category: 'catalog', fileType: 'PDF', fileSize: '1.9 MB', language: 'TR/EN', thumbnail: '/images/placeholder.svg', description: 'Vana pozisyon göstergeleri ürün serisi', featured: true },
+      { id: 5, title: 'Smith Interlock Teknik Çizimleri', category: 'technical', fileType: 'PDF', fileSize: '12.3 MB', language: 'EN', thumbnail: '/images/placeholder.svg', description: 'CAD formatında teknik çizimler' },
+      { id: 6, title: 'ATEX/IECEx Sertifikası', category: 'certificate', fileType: 'PDF', fileSize: '450 KB', language: 'EN', thumbnail: '/images/placeholder.svg', description: 'Patlayıcı ortam sertifikası' },
+      { id: 7, title: 'ISO 9001:2015 Kalite Sertifikası', category: 'certificate', fileType: 'PDF', fileSize: '320 KB', language: 'EN', thumbnail: '/images/placeholder.svg', description: 'Kalite yönetim sistemi sertifikası' },
+      { id: 8, title: 'Vana Kilidi Kurulum Kılavuzu', category: 'manual', fileType: 'PDF', fileSize: '5.6 MB', language: 'TR', thumbnail: '/images/placeholder.svg', description: 'Adım adım kurulum talimatları' }
     ],
     en: [
-      { id: 1, title: 'Sofis Valve Interlocks General Catalog', category: 'catalog', fileType: 'PDF', fileSize: '8.5 MB', language: 'TR/EN', thumbnail: '/images/docs/catalog-1.jpg', description: 'Complete Sofis valve interlocks product range', featured: true },
-      { id: 2, title: 'EasiDrive Portable Actuator', category: 'catalog', fileType: 'PDF', fileSize: '3.2 MB', language: 'TR/EN', thumbnail: '/images/docs/catalog-2.jpg', description: 'EasiDrive portable valve actuator technical details', featured: true },
-      { id: 3, title: 'FlexiDrive Remote Valve Operator', category: 'catalog', fileType: 'PDF', fileSize: '2.8 MB', language: 'TR/EN', thumbnail: '/images/products/flexidrive.jpg', description: 'FlexiDrive remote valve operation system', featured: true },
-      { id: 4, title: 'VPI Position Indicator Catalog', category: 'catalog', fileType: 'PDF', fileSize: '1.9 MB', language: 'TR/EN', thumbnail: '/images/products/vpi.jpg', description: 'Valve position indicator product series', featured: true },
-      { id: 5, title: 'Smith Interlock Technical Drawings', category: 'technical', fileType: 'PDF', fileSize: '12.3 MB', language: 'EN', thumbnail: '/images/docs/technical.jpg', description: 'Technical drawings in CAD format' },
-      { id: 6, title: 'ATEX/IECEx Certificate', category: 'certificate', fileType: 'PDF', fileSize: '450 KB', language: 'EN', thumbnail: '/images/docs/certificate-1.jpg', description: 'Explosive atmosphere certificate' },
-      { id: 7, title: 'ISO 9001:2015 Quality Certificate', category: 'certificate', fileType: 'PDF', fileSize: '320 KB', language: 'EN', thumbnail: '/images/docs/certificate-2.jpg', description: 'Quality management system certificate' },
-      { id: 8, title: 'Valve Interlock Installation Guide', category: 'manual', fileType: 'PDF', fileSize: '5.6 MB', language: 'TR', thumbnail: '/images/docs/manual.jpg', description: 'Step by step installation instructions' }
+      { id: 1, title: 'Sofis Valve Interlocks General Catalog', category: 'catalog', fileType: 'PDF', fileSize: '8.5 MB', language: 'TR/EN', thumbnail: '/images/placeholder.svg', description: 'Complete Sofis valve interlocks product range', featured: true },
+      { id: 2, title: 'EasiDrive Portable Actuator', category: 'catalog', fileType: 'PDF', fileSize: '3.2 MB', language: 'TR/EN', thumbnail: '/images/placeholder.svg', description: 'EasiDrive portable valve actuator technical details', featured: true },
+      { id: 3, title: 'FlexiDrive Remote Valve Operator', category: 'catalog', fileType: 'PDF', fileSize: '2.8 MB', language: 'TR/EN', thumbnail: '/images/placeholder.svg', description: 'FlexiDrive remote valve operation system', featured: true },
+      { id: 4, title: 'VPI Position Indicator Catalog', category: 'catalog', fileType: 'PDF', fileSize: '1.9 MB', language: 'TR/EN', thumbnail: '/images/placeholder.svg', description: 'Valve position indicator product series', featured: true },
+      { id: 5, title: 'Smith Interlock Technical Drawings', category: 'technical', fileType: 'PDF', fileSize: '12.3 MB', language: 'EN', thumbnail: '/images/placeholder.svg', description: 'Technical drawings in CAD format' },
+      { id: 6, title: 'ATEX/IECEx Certificate', category: 'certificate', fileType: 'PDF', fileSize: '450 KB', language: 'EN', thumbnail: '/images/placeholder.svg', description: 'Explosive atmosphere certificate' },
+      { id: 7, title: 'ISO 9001:2015 Quality Certificate', category: 'certificate', fileType: 'PDF', fileSize: '320 KB', language: 'EN', thumbnail: '/images/placeholder.svg', description: 'Quality management system certificate' },
+      { id: 8, title: 'Valve Interlock Installation Guide', category: 'manual', fileType: 'PDF', fileSize: '5.6 MB', language: 'TR', thumbnail: '/images/placeholder.svg', description: 'Step by step installation instructions' }
     ],
     az: [
-      { id: 1, title: 'Sofis Vana Kilidləri Ümumi Kataloqu', category: 'catalog', fileType: 'PDF', fileSize: '8.5 MB', language: 'TR/EN', thumbnail: '/images/docs/catalog-1.jpg', description: 'Bütün Sofis vana kilidləri məhsul xətti', featured: true },
-      { id: 2, title: 'EasiDrive Daşınan Aktuator', category: 'catalog', fileType: 'PDF', fileSize: '3.2 MB', language: 'TR/EN', thumbnail: '/images/docs/catalog-2.jpg', description: 'EasiDrive daşınan vana aktuatoru texniki detallar', featured: true },
-      { id: 3, title: 'FlexiDrive Uzaqdan Vana Operatoru', category: 'catalog', fileType: 'PDF', fileSize: '2.8 MB', language: 'TR/EN', thumbnail: '/images/products/flexidrive.jpg', description: 'FlexiDrive uzaqdan vana işlətmə sistemi', featured: true },
-      { id: 4, title: 'VPI Pozisiya Göstəricisi Kataloqu', category: 'catalog', fileType: 'PDF', fileSize: '1.9 MB', language: 'TR/EN', thumbnail: '/images/products/vpi.jpg', description: 'Vana pozisiya göstəriciləri məhsul seriyası', featured: true },
-      { id: 5, title: 'Smith Interlock Texniki Çizgiləri', category: 'technical', fileType: 'PDF', fileSize: '12.3 MB', language: 'EN', thumbnail: '/images/docs/technical.jpg', description: 'CAD formatında texniki çizgilər' },
-      { id: 6, title: 'ATEX/IECEx Sertifikatı', category: 'certificate', fileType: 'PDF', fileSize: '450 KB', language: 'EN', thumbnail: '/images/docs/certificate-1.jpg', description: 'Partlayıcı mühit sertifikatı' },
-      { id: 7, title: 'ISO 9001:2015 Keyfiyyət Sertifikatı', category: 'certificate', fileType: 'PDF', fileSize: '320 KB', language: 'EN', thumbnail: '/images/docs/certificate-2.jpg', description: 'Keyfiyyət idarəetmə sistemi sertifikatı' },
-      { id: 8, title: 'Vana Kilidi Quraşdırma Bələdçisi', category: 'manual', fileType: 'PDF', fileSize: '5.6 MB', language: 'TR', thumbnail: '/images/docs/manual.jpg', description: 'Addım-addım quraşdırma təlimatları' }
+      { id: 1, title: 'Sofis Vana Kilidləri Ümumi Kataloqu', category: 'catalog', fileType: 'PDF', fileSize: '8.5 MB', language: 'TR/EN', thumbnail: '/images/placeholder.svg', description: 'Bütün Sofis vana kilidləri məhsul xətti', featured: true },
+      { id: 2, title: 'EasiDrive Daşınan Aktuator', category: 'catalog', fileType: 'PDF', fileSize: '3.2 MB', language: 'TR/EN', thumbnail: '/images/placeholder.svg', description: 'EasiDrive daşınan vana aktuatoru texniki detallar', featured: true },
+      { id: 3, title: 'FlexiDrive Uzaqdan Vana Operatoru', category: 'catalog', fileType: 'PDF', fileSize: '2.8 MB', language: 'TR/EN', thumbnail: '/images/placeholder.svg', description: 'FlexiDrive uzaqdan vana işlətmə sistemi', featured: true },
+      { id: 4, title: 'VPI Pozisiya Göstəricisi Kataloqu', category: 'catalog', fileType: 'PDF', fileSize: '1.9 MB', language: 'TR/EN', thumbnail: '/images/placeholder.svg', description: 'Vana pozisiya göstəriciləri məhsul seriyası', featured: true },
+      { id: 5, title: 'Smith Interlock Texniki Çizgiləri', category: 'technical', fileType: 'PDF', fileSize: '12.3 MB', language: 'EN', thumbnail: '/images/placeholder.svg', description: 'CAD formatında texniki çizgilər' },
+      { id: 6, title: 'ATEX/IECEx Sertifikatı', category: 'certificate', fileType: 'PDF', fileSize: '450 KB', language: 'EN', thumbnail: '/images/placeholder.svg', description: 'Partlayıcı mühit sertifikatı' },
+      { id: 7, title: 'ISO 9001:2015 Keyfiyyət Sertifikatı', category: 'certificate', fileType: 'PDF', fileSize: '320 KB', language: 'EN', thumbnail: '/images/placeholder.svg', description: 'Keyfiyyət idarəetmə sistemi sertifikatı' },
+      { id: 8, title: 'Vana Kilidi Quraşdırma Bələdçisi', category: 'manual', fileType: 'PDF', fileSize: '5.6 MB', language: 'TR', thumbnail: '/images/placeholder.svg', description: 'Addım-addım quraşdırma təlimatları' }
     ]
   };
 
   const documentCategories = documentCategoriesByLocale[locale];
   const documents = documentsByLocale[locale];
   const hasContent = Boolean(text && documentCategories && documents && company);
-  const documentCategories = isTrOrAz ? [
-    { id: 'catalog', name: 'Məhsul Kataloqları', icon: 'Book' },
-    { id: 'technical', name: 'Texniki Çizgilər', icon: 'FileImage' },
-    { id: 'certificate', name: 'Sertifikatlar', icon: 'Award' },
-    { id: 'manual', name: 'İstifadəçi Bələdçiləri', icon: 'FileText' },
-    { id: 'datasheet', name: 'Datasheetlər', icon: 'FileSpreadsheet' }
-  ] : [
-    { id: 'catalog', name: 'Product Catalogs', icon: 'Book' },
-    { id: 'technical', name: 'Technical Drawings', icon: 'FileImage' },
-    { id: 'certificate', name: 'Certificates', icon: 'Award' },
-    { id: 'manual', name: 'User Manuals', icon: 'FileText' },
-    { id: 'datasheet', name: 'Datasheets', icon: 'FileSpreadsheet' }
-  ];
-
-  const documents = isTrOrAz ? [
-    { id: 1, title: 'Sofis Vana Kilidləri Ümumi Kataloqu', category: 'catalog', fileType: 'PDF', fileSize: '8.5 MB', language: 'TR/EN', thumbnail: '/images/docs/catalog-1.jpg', description: 'Bütün Sofis vana kilidləri məhsul xətti', featured: true },
-    { id: 2, title: 'EasiDrive Daşınan Aktuator', category: 'catalog', fileType: 'PDF', fileSize: '3.2 MB', language: 'TR/EN', thumbnail: '/images/docs/catalog-2.jpg', description: 'EasiDrive daşınan vana aktuatoru texniki detallar', featured: true },
-    { id: 3, title: 'FlexiDrive Uzaqdan Vana Operatoru', category: 'catalog', fileType: 'PDF', fileSize: '2.8 MB', language: 'TR/EN', thumbnail: '/images/products/flexidrive.jpg', description: 'FlexiDrive uzaqdan vana işlətmə sistemi', featured: true },
-    { id: 4, title: 'VPI Pozisiya Göstəricisi Kataloqu', category: 'catalog', fileType: 'PDF', fileSize: '1.9 MB', language: 'TR/EN', thumbnail: '/images/products/vpi.jpg', description: 'Vana pozisiya göstəriciləri məhsul seriyası', featured: true },
-    { id: 5, title: 'Smith Interlock Texniki Çizgiləri', category: 'technical', fileType: 'PDF', fileSize: '12.3 MB', language: 'EN', thumbnail: '/images/docs/technical.jpg', description: 'CAD formatında texniki çizgilər' },
-    { id: 6, title: 'ATEX/IECEx Sertifikatı', category: 'certificate', fileType: 'PDF', fileSize: '450 KB', language: 'EN', thumbnail: '/images/docs/certificate-1.jpg', description: 'Partlayıcı mühit sertifikatı' },
-    { id: 7, title: 'ISO 9001:2015 Keyfiyyət Sertifikatı', category: 'certificate', fileType: 'PDF', fileSize: '320 KB', language: 'EN', thumbnail: '/images/docs/certificate-2.jpg', description: 'Keyfiyyət idarəetmə sistemi sertifikatı' },
-    { id: 8, title: 'Vana Kilidi Quraşdırma Bələdçisi', category: 'manual', fileType: 'PDF', fileSize: '5.6 MB', language: 'TR', thumbnail: '/images/docs/manual.jpg', description: 'Addım-addım quraşdırma təlimatları' }
-  ] : [
-    { id: 1, title: 'Sofis Valve Interlocks General Catalog', category: 'catalog', fileType: 'PDF', fileSize: '8.5 MB', language: 'TR/EN', thumbnail: '/images/docs/catalog-1.jpg', description: 'Complete Sofis valve interlocks product range', featured: true },
-    { id: 2, title: 'EasiDrive Portable Actuator', category: 'catalog', fileType: 'PDF', fileSize: '3.2 MB', language: 'TR/EN', thumbnail: '/images/docs/catalog-2.jpg', description: 'EasiDrive portable valve actuator technical details', featured: true },
-    { id: 3, title: 'FlexiDrive Remote Valve Operator', category: 'catalog', fileType: 'PDF', fileSize: '2.8 MB', language: 'TR/EN', thumbnail: '/images/products/flexidrive.jpg', description: 'FlexiDrive remote valve operation system', featured: true },
-    { id: 4, title: 'VPI Position Indicator Catalog', category: 'catalog', fileType: 'PDF', fileSize: '1.9 MB', language: 'TR/EN', thumbnail: '/images/products/vpi.jpg', description: 'Valve position indicator product series', featured: true },
-    { id: 5, title: 'Smith Interlock Technical Drawings', category: 'technical', fileType: 'PDF', fileSize: '12.3 MB', language: 'EN', thumbnail: '/images/docs/technical.jpg', description: 'Technical drawings in CAD format' },
-    { id: 6, title: 'ATEX/IECEx Certificate', category: 'certificate', fileType: 'PDF', fileSize: '450 KB', language: 'EN', thumbnail: '/images/docs/certificate-1.jpg', description: 'Explosive atmosphere certificate' },
-    { id: 7, title: 'ISO 9001:2015 Quality Certificate', category: 'certificate', fileType: 'PDF', fileSize: '320 KB', language: 'EN', thumbnail: '/images/docs/certificate-2.jpg', description: 'Quality management system certificate' },
-    { id: 8, title: 'Valve Interlock Installation Guide', category: 'manual', fileType: 'PDF', fileSize: '5.6 MB', language: 'TR', thumbnail: '/images/docs/manual.jpg', description: 'Step by step installation instructions' }
-  ];
 
   const filteredDocuments = documents.filter(doc => {
     const matchesCategory = activeCategory === 'all' || doc.category === activeCategory;
@@ -194,8 +141,8 @@ const DocumentationPage = () => {
     const body = encodeURIComponent(
       text.requestBody.replace('{title}', doc.title).replace('{category}', categoryName)
     );
-  const fallbackEmail = 'info@demart.com.tr';
-  const email = company?.email || fallbackEmail;
+    const fallbackEmail = 'info@demart.com.tr';
+    const email = company?.email || fallbackEmail;
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
   };
 

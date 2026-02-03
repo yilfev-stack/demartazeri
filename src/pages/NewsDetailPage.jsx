@@ -30,7 +30,7 @@ const newsDetails = {
         <h2>Sonuç</h2>
         <p>Müşteri, FlexiDrive sistemini tüm tank çiftliğine yaygınlaştırmaya karar verdi ve toplam 24 vanayı uzaktan kontrol sistemiyle donattı.</p>
       `,
-      image: "/images/news/news-1.jpg"
+      image: "/images/placeholder.svg"
     },
     en: {
       title: "Safety and Efficiency Transformation with Remote Valve Operator for Tank Bottom Drain Valve",
@@ -52,7 +52,7 @@ const newsDetails = {
         <h2>Result</h2>
         <p>The customer decided to expand the FlexiDrive system across the entire tank farm, equipping a total of 24 valves with the remote control system.</p>
       `,
-      image: "/images/news/news-1.jpg"
+      image: "/images/placeholder.svg"
     }
   },
   'kamyon-yuklemesi-hassasiyet': {
@@ -76,7 +76,7 @@ const newsDetails = {
         <h2>Sonuç</h2>
         <p>Sistem kurulumundan bu yana sıfır yanlış yükleme olayı yaşandı ve operasyonel verimlilik %25 arttı.</p>
       `,
-      image: "/images/news/news-2.jpg"
+      image: "/images/placeholder.svg"
     },
     en: {
       title: "Right Product in Silo and Terminal Loading: How to Prevent Wrong Lineups?",
@@ -98,7 +98,7 @@ const newsDetails = {
         <h2>Result</h2>
         <p>Since system installation, zero misloading incidents have occurred and operational efficiency increased by 25%.</p>
       `,
-      image: "/images/news/news-2.jpg"
+      image: "/images/placeholder.svg"
     }
   },
   'zincirli-vana-riskleri': {
@@ -128,7 +128,7 @@ const newsDetails = {
         <h2>Sonuç</h2>
         <p>Müşterilerimiz FlexiDrive'a geçtikten sonra vana operasyonlarıyla ilgili iş kazalarında %90 azalma bildirdi.</p>
       `,
-      image: "/images/news/news-3.jpg"
+      image: "/images/placeholder.svg"
     },
     en: {
       title: "How Chain Wheel Valve Operations Put Your Operators at Risk?",
@@ -156,7 +156,7 @@ const newsDetails = {
         <h2>Result</h2>
         <p>Our customers reported a 90% reduction in work accidents related to valve operations after switching to FlexiDrive.</p>
       `,
-      image: "/images/news/news-3.jpg"
+      image: "/images/placeholder.svg"
     }
   }
 };
@@ -167,9 +167,6 @@ const NewsDetailPage = () => {
   const routes = ROUTE_MAP[locale];
   const articleSet = newsDetails[slug];
   const article = articleSet?.[locale];
-  const { language } = useLanguage();
-  const isTrOrAz = language === 'tr' || language === 'az';
-
   
   if (!articleSet) {
     return (
@@ -178,17 +175,10 @@ const NewsDetailPage = () => {
         <main className="flex-grow pt-[104px] flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-2xl font-bold text-gray-900 mb-4">
-
               {t('Haber Bulunamadı', 'Article Not Found', 'Xəbər Tapılmadı')}
             </h1>
             <Link to={routes.news} className="text-[#00a0e3] hover:underline">
               {t('Haberlere Dön', 'Back to News', 'Xəbərlərə Qayıt')}
-
-              {isTrOrAz ? 'Xəbər Tapılmadı' : 'Article Not Found'}
-            </h1>
-            <Link to="/haberler" className="text-[#00a0e3] hover:underline">
-              {isTrOrAz ? 'Xəbərlərə Qayıt' : 'Back to News'}
-
             </Link>
           </div>
         </main>
@@ -220,7 +210,7 @@ const NewsDetailPage = () => {
             alt={article.title}
             className="w-full h-full object-cover opacity-60"
             onError={(e) => {
-              e.target.src = 'https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=1920&q=80';
+              e.target.src = '/images/placeholder.svg';
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
@@ -232,8 +222,6 @@ const NewsDetailPage = () => {
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 {t('Tüm Haberler', 'All News', 'Bütün Xəbərlər')}
-                {isTrOrAz ? 'Bütün Xəbərlər' : 'All News'}
-
               </Link>
               <h1 className="text-2xl md:text-4xl font-bold text-white">
                 {article.title}
@@ -253,9 +241,6 @@ const NewsDetailPage = () => {
               <button className="flex items-center text-gray-500 hover:text-[#00a0e3] transition-colors">
                 <Share2 className="w-5 h-5 mr-2" />
                 {t('Paylaş', 'Share', 'Paylaş')}
-
-                {isTrOrAz ? 'Paylaş' : 'Share'}
-
               </button>
             </div>
             
@@ -270,10 +255,7 @@ const NewsDetailPage = () => {
                 className="inline-flex items-center text-[#00a0e3] font-medium hover:underline"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
-
                 {t('Tüm Haberlere Dön', 'Back to All News', 'Bütün Xəbərlərə Qayıt')}
-                {isTrOrAz ? 'Bütün Xəbərlərə Qayıt' : 'Back to All News'}
-
               </Link>
             </div>
           </div>

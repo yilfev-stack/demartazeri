@@ -113,13 +113,13 @@ const Header = () => {
               <nav className="hidden lg:flex items-center gap-6">
                 {nav.map((item) => (
                   <Link
-                    key={item.key || item.link}
-                    to={item.link}
+                    key={item.key || item.href}
+                    to={item.href}
                     className={`text-sm font-medium transition-colors ${
-                      location.pathname === item.link ? 'text-[#00a0e3]' : 'text-gray-700 hover:text-[#00a0e3]'
+                      location.pathname === item.href ? 'text-[#00a0e3]' : 'text-gray-700 hover:text-[#00a0e3]'
                     }`}
                   >
-                    {item.label}
+                    {item.name}
                   </Link>
                 ))}
 
@@ -174,16 +174,16 @@ const Header = () => {
                 <nav className="space-y-1">
                   {nav.map((item) => (
                     <Link
-                      key={item.key || item.link}
-                      to={item.link}
+                      key={item.key || item.href}
+                      to={item.href}
                       onClick={() => setIsMenuOpen(false)}
                       className={`block px-4 py-3 rounded-lg transition-colors ${
-                        location.pathname === item.link
+                        location.pathname === item.href
                           ? 'bg-[#00a0e3] text-white'
                           : 'text-gray-700 hover:bg-gray-100'
                       }`}
                     >
-                      {item.label}
+                      {item.name}
                     </Link>
                   ))}
 

@@ -63,9 +63,9 @@ export const productDetails = {
   "smith-ql-vana-kilitleri": {
     id: 9,
     slug: "smith-ql-vana-kilitleri",
-    heroImage: "/images/products/smith-interlocks.jpg",
+    heroImage: "/images/placeholder.svg",
     gallery: [
-      "/images/products/smith-interlocks.jpg"
+      "/images/placeholder.svg"
     ],
     references: ["Shell", "BP", "ExxonMobil", "Chevron"],
     tr: {
@@ -75,7 +75,7 @@ export const productDetails = {
       introduction: {
         title: "Quarter-Turn Vanalarda Mekanik Disiplin",
         content: "QL serisi, kol ile çalışan vanalarda hızlı açma/kapama kaynaklı riskleri azaltmak için tasarlanmıştır. Anahtar transfer prensibiyle yanlış sırada yapılan operasyonları fiziksel olarak engeller ve sahada güvenli bir çalışma standardı oluşturur.",
-        image: "/images/products/smith-interlocks.jpg"
+        image: "/images/placeholder.svg"
       },
       benefits: [
         { icon: "Shield", title: "Güvenli Sıralama", description: "Doğru işlem sırasını mekanik olarak garanti eder" },
@@ -84,7 +84,7 @@ export const productDetails = {
         { icon: "Clock", title: "Operasyon Disiplini", description: "Sahada prosedürlere bağlılığı artırır" }
       ],
       products: [
-        { name: "QL Tek Anahtar", description: "Tek anahtar akışı ile güvenli sıralama.", details: "Quarter-turn vanalar için.", image: "/images/products/smith-interlocks.jpg" }
+        { name: "QL Tek Anahtar", description: "Tek anahtar akışı ile güvenli sıralama.", details: "Quarter-turn vanalar için.", image: "/images/placeholder.svg" }
       ],
       applications: ["Quarter-turn izolasyon vanaları", "Tank sahaları", "Terminal yükleme hatları", "Tehlikeli proses hatları"],
       specifications: { "Malzeme": "Paslanmaz Çelik", "Sertifikalar": "ATEX, IECEx", "Çalışma Sıcaklığı": "-40°C ile +120°C" }
@@ -96,7 +96,7 @@ export const productDetails = {
       introduction: {
         title: "Mechanical Discipline for Quarter-Turn Valves",
         content: "The QL series is designed to reduce risks caused by rapid open/close actions on lever-operated valves. By using the key transfer principle, it physically blocks out-of-sequence operations and establishes a safe field standard.",
-        image: "/images/products/smith-interlocks.jpg"
+        image: "/images/placeholder.svg"
       },
       benefits: [
         { icon: "Shield", title: "Safe Sequencing", description: "Mechanically guarantees the correct operating sequence" },
@@ -105,7 +105,7 @@ export const productDetails = {
         { icon: "Clock", title: "Operational Discipline", description: "Improves adherence to field procedures" }
       ],
       products: [
-        { name: "QL Single Key", description: "Safe sequencing with a single key flow.", details: "For quarter-turn valves.", image: "/images/products/smith-interlocks.jpg" }
+        { name: "QL Single Key", description: "Safe sequencing with a single key flow.", details: "For quarter-turn valves.", image: "/images/placeholder.svg" }
       ],
       applications: ["Quarter-turn isolation valves", "Tank farms", "Terminal loading lines", "Hazardous process lines"],
       specifications: { "Material": "Stainless Steel", "Certifications": "ATEX, IECEx", "Operating Temperature": "-40°C to +120°C" }
@@ -115,9 +115,9 @@ export const productDetails = {
   "smith-gl-vana-kilitleri": {
     id: 10,
     slug: "smith-gl-vana-kilitleri",
-    heroImage: "/images/products/smith-interlocks.jpg",
+    heroImage: "/images/placeholder.svg",
     gallery: [
-      "/images/products/smith-interlocks.jpg"
+      "/images/placeholder.svg"
     ],
     references: ["Shell", "BP", "ExxonMobil", "Chevron"],
     tr: {
@@ -127,7 +127,7 @@ export const productDetails = {
       introduction: {
         title: "Multi-Turn Vanalarda Güvenli İşlem",
         content: "GL serisi, el çarkı ile çalışan vanalarda yanlış sırada açma/kapama riskini ortadan kaldırmak için tasarlanmıştır. Anahtar transfer sistemi ile bakım, izolasyon ve devreye alma adımlarını güvenli hale getirir.",
-        image: "/images/products/smith-interlocks.jpg"
+        image: "/images/placeholder.svg"
       },
       benefits: [
         { icon: "Shield", title: "Proses Güvenliği", description: "Doğru vana sırasını mekanik olarak zorunlu kılar" },
@@ -136,7 +136,7 @@ export const productDetails = {
         { icon: "Wrench", title: "Uygulanabilirlik", description: "Mevcut multi-turn vanalara uyarlanır" }
       ],
       products: [
-        { name: "GL Standart", description: "Multi-turn vanalar için mekanik kilitleme.", details: "El çarklı vanalarla uyumlu.", image: "/images/products/smith-interlocks.jpg" }
+        { name: "GL Standart", description: "Multi-turn vanalar için mekanik kilitleme.", details: "El çarklı vanalarla uyumlu.", image: "/images/placeholder.svg" }
       ],
       applications: ["Gate/Globe vanalar", "Proses izolasyon hatları", "Bakım kilitleme senaryoları"],
       specifications: { "Malzeme": "Paslanmaz Çelik", "Sertifikalar": "ATEX, IECEx, SIL", "Çalışma Sıcaklığı": "-40°C ile +120°C" }
@@ -148,7 +148,7 @@ export const productDetails = {
       introduction: {
         title: "Safe Operation for Multi-Turn Valves",
         content: "The GL series is designed to eliminate out-of-sequence opening/closing risks on handwheel-operated valves. With the key transfer system, it makes maintenance, isolation, and commissioning steps safer.",
-        image: "/images/products/smith-interlocks.jpg"
+        image: "/images/placeholder.svg"
       },
       benefits: [
         { icon: "Shield", title: "Process Safety", description: "Mechanically enforces the correct valve order" },
@@ -157,7 +157,7 @@ export const productDetails = {
         { icon: "Wrench", title: "Applicability", description: "Adapts to existing multi-turn valves" }
       ],
       products: [
-        { name: "GL Standard", description: "Mechanical interlocking for multi-turn valves.", details: "Compatible with handwheel valves.", image: "/images/products/smith-interlocks.jpg" }
+        { name: "GL Standard", description: "Mechanical interlocking for multi-turn valves.", details: "Compatible with handwheel valves.", image: "/images/placeholder.svg" }
       ],
       applications: ["Gate/Globe valves", "Process isolation lines", "Maintenance interlocking scenarios"],
       specifications: { "Material": "Stainless Steel", "Certifications": "ATEX, IECEx, SIL", "Operating Temperature": "-40°C to +120°C" }
@@ -219,9 +219,9 @@ export const productDetails = {
   "netherlocks-ndl-ceyrek-donus-kilitleri": {
     id: 11,
     slug: "netherlocks-ndl-ceyrek-donus-kilitleri",
-    heroImage: "/images/products/netherlocks.jpg",
+    heroImage: "/images/placeholder.svg",
     gallery: [
-      "/images/products/netherlocks.jpg"
+      "/images/placeholder.svg"
     ],
     references: ["Total", "ENI", "Vopak", "Technip"],
     tr: {
@@ -231,7 +231,7 @@ export const productDetails = {
       introduction: {
         title: "Çeyrek Dönüşlü Vanalarda Kontrol",
         content: "NDL kilitleri, hızlı açma/kapama riskine sahip quarter-turn vanalarda güvenli operasyon sağlar. Benzersiz anahtar kodlaması sayesinde yanlış vana hareketleri engellenir ve bakım sırasında güvenli izolasyon elde edilir.",
-        image: "/images/products/netherlocks.jpg"
+        image: "/images/placeholder.svg"
       },
       benefits: [
         { icon: "Lock", title: "Mekanik Koruma", description: "Elektrik gerektirmeden güvenlik sağlar" },
@@ -240,7 +240,7 @@ export const productDetails = {
         { icon: "ThumbsUp", title: "Dayanıklılık", description: "Zorlu ortamlarda uzun ömürlü kullanım" }
       ],
       products: [
-        { name: "NDL Standart", description: "Quarter-turn vanalar için kompakt kilit.", details: "90° hareket kontrolü.", image: "/images/products/netherlocks.jpg" }
+        { name: "NDL Standart", description: "Quarter-turn vanalar için kompakt kilit.", details: "90° hareket kontrolü.", image: "/images/placeholder.svg" }
       ],
       applications: ["Küresel vana hatları", "Kelebek vana uygulamaları", "Terminal ve yükleme hatları"],
       specifications: { "Malzeme": "316L Paslanmaz Çelik", "Sertifikalar": "ATEX Zone 1, IECEx", "IP Sınıfı": "IP66/IP67" }
@@ -252,7 +252,7 @@ export const productDetails = {
       introduction: {
         title: "Control for Quarter-Turn Valves",
         content: "NDL interlocks provide safe operation on quarter-turn valves with rapid open/close risks. Unique key coding prevents incorrect valve movements and ensures safe isolation during maintenance.",
-        image: "/images/products/netherlocks.jpg"
+        image: "/images/placeholder.svg"
       },
       benefits: [
         { icon: "Lock", title: "Mechanical Protection", description: "Safety without electricity" },
@@ -261,7 +261,7 @@ export const productDetails = {
         { icon: "ThumbsUp", title: "Durability", description: "Long service life in harsh environments" }
       ],
       products: [
-        { name: "NDL Standard", description: "Compact interlock for quarter-turn valves.", details: "90° movement control.", image: "/images/products/netherlocks.jpg" }
+        { name: "NDL Standard", description: "Compact interlock for quarter-turn valves.", details: "90° movement control.", image: "/images/placeholder.svg" }
       ],
       applications: ["Ball valve lines", "Butterfly valve applications", "Terminal and loading lines"],
       specifications: { "Material": "316L Stainless Steel", "Certifications": "ATEX Zone 1, IECEx", "IP Rating": "IP66/IP67" }
@@ -271,9 +271,9 @@ export const productDetails = {
   "netherlocks-mrl-vana-kilitleri": {
     id: 12,
     slug: "netherlocks-mrl-vana-kilitleri",
-    heroImage: "/images/products/netherlocks.jpg",
+    heroImage: "/images/placeholder.svg",
     gallery: [
-      "/images/products/netherlocks.jpg"
+      "/images/placeholder.svg"
     ],
     references: ["Total", "ENI", "Vopak", "Technip"],
     tr: {
@@ -283,7 +283,7 @@ export const productDetails = {
       introduction: {
         title: "Multi-Turn Vanalar İçin Güvenli Çözüm",
         content: "MRL kilitleri, el çarkı ile çalıştırılan vanalarda yanlış adımları engellemek için tasarlanmıştır. Anahtar transfer sistemi sayesinde bakım, izolasyon ve devreye alma adımları güvenli ve denetlenebilir hale gelir.",
-        image: "/images/products/netherlocks.jpg"
+        image: "/images/placeholder.svg"
       },
       benefits: [
         { icon: "Lock", title: "Mekanik Disiplin", description: "Yanlış sıralamayı fiziksel olarak engeller" },
@@ -292,7 +292,7 @@ export const productDetails = {
         { icon: "ThumbsUp", title: "Düşük Bakım", description: "Uzun ömürlü ve dayanıklı yapı" }
       ],
       products: [
-        { name: "MRL Standart", description: "Multi-turn vanalar için mekanik kilit.", details: "El çarklı vanalara uyumlu.", image: "/images/products/netherlocks.jpg" }
+        { name: "MRL Standart", description: "Multi-turn vanalar için mekanik kilit.", details: "El çarklı vanalara uyumlu.", image: "/images/placeholder.svg" }
       ],
       applications: ["Gate/Globe vanalar", "İzolasyon hatları", "Bakım ve devreye alma prosedürleri"],
       specifications: { "Malzeme": "316L Paslanmaz Çelik", "Sertifikalar": "ATEX Zone 1, IECEx", "IP Sınıfı": "IP66/IP67" }
@@ -304,7 +304,7 @@ export const productDetails = {
       introduction: {
         title: "Safe Solution for Multi-Turn Valves",
         content: "MRL interlocks are designed to prevent incorrect steps on handwheel-operated valves. The key transfer system makes maintenance, isolation, and commissioning steps safe and auditable.",
-        image: "/images/products/netherlocks.jpg"
+        image: "/images/placeholder.svg"
       },
       benefits: [
         { icon: "Lock", title: "Mechanical Discipline", description: "Physically blocks incorrect sequencing" },
@@ -313,7 +313,7 @@ export const productDetails = {
         { icon: "ThumbsUp", title: "Low Maintenance", description: "Long-lasting and durable design" }
       ],
       products: [
-        { name: "MRL Standard", description: "Mechanical interlock for multi-turn valves.", details: "Compatible with handwheel valves.", image: "/images/products/netherlocks.jpg" }
+        { name: "MRL Standard", description: "Mechanical interlock for multi-turn valves.", details: "Compatible with handwheel valves.", image: "/images/placeholder.svg" }
       ],
       applications: ["Gate/Globe valves", "Isolation lines", "Maintenance and commissioning procedures"],
       specifications: { "Material": "316L Stainless Steel", "Certifications": "ATEX Zone 1, IECEx", "IP Rating": "IP66/IP67" }
@@ -473,8 +473,8 @@ export const productDetails = {
   "power-wrench": {
     id: 6,
     slug: "power-wrench",
-    heroImage: "/images/products/power-wrench.jpg",
-    gallery: ["/images/products/power-wrench.jpg"],
+    heroImage: "/images/placeholder.svg",
+    gallery: ["/images/placeholder.svg"],
     references: ["Shell", "BP", "ExxonMobil", "Chevron"],
     tr: {
       name: "Power Wrench Taşınabilir Aktüatör",
@@ -483,7 +483,7 @@ export const productDetails = {
       introduction: {
         title: "Maksimum Güç, Minimum Efor",
         content: "Power Wrench, basınçlı hava ile çalışan güçlü bir taşınabilir aktüatördür. Zorlu vanalarda kontrollü tork sağlar, ekipman hasarını ve operatör zorlanmasını azaltır. Bakım ve acil durum operasyonlarında güvenilir performans sunar. Yüksek torklu uygulamalarda operasyon hızını ciddi şekilde artırır.",
-        image: "/images/products/power-wrench.jpg"
+        image: "/images/placeholder.svg"
       },
       benefits: [
         { icon: "Zap", title: "Yüksek Tork", description: "2700 Nm'ye kadar tork çıkışı" },
@@ -492,7 +492,7 @@ export const productDetails = {
         { icon: "Wrench", title: "Dayanıklı", description: "Endüstriyel kullanım için tasarlanmış" }
       ],
       products: [
-        { name: "Power Wrench Standart", description: "Genel amaçlı pnömatik vana aktüatörü.", details: "2700 Nm'ye kadar tork.", image: "/images/products/power-wrench.jpg" }
+        { name: "Power Wrench Standart", description: "Genel amaçlı pnömatik vana aktüatörü.", details: "2700 Nm'ye kadar tork.", image: "/images/placeholder.svg" }
       ],
       applications: ["Büyük izolasyon vanaları", "Sıkışmış vanalar", "Acil durum vanaları", "Yüksek torklu uygulamalar"],
       specifications: { "Güç Kaynağı": "Basınçlı Hava (6-8 bar)", "Tork": "2700 Nm'ye kadar", "Sertifikalar": "ATEX, IECEx" }
@@ -504,7 +504,7 @@ export const productDetails = {
       introduction: {
         title: "Maximum Power, Minimum Effort",
         content: "Power Wrench is a powerful portable actuator powered by compressed air. It delivers controlled torque on difficult valves, reducing equipment damage and operator strain. It provides reliable performance for maintenance and emergency operations. It significantly speeds up high-torque applications.",
-        image: "/images/products/power-wrench.jpg"
+        image: "/images/placeholder.svg"
       },
       benefits: [
         { icon: "Zap", title: "High Torque", description: "Up to 2700 Nm torque output" },
@@ -513,7 +513,7 @@ export const productDetails = {
         { icon: "Wrench", title: "Durable", description: "Designed for industrial use" }
       ],
       products: [
-        { name: "Power Wrench Standard", description: "General purpose pneumatic valve actuator.", details: "Up to 2700 Nm torque.", image: "/images/products/power-wrench.jpg" }
+        { name: "Power Wrench Standard", description: "General purpose pneumatic valve actuator.", details: "Up to 2700 Nm torque.", image: "/images/placeholder.svg" }
       ],
       applications: ["Large isolation valves", "Stuck valves", "Emergency valves", "High-torque applications"],
       specifications: { "Power Source": "Compressed Air (6-8 bar)", "Torque": "Up to 2700 Nm", "Certifications": "ATEX, IECEx" }
@@ -573,8 +573,8 @@ export const productDetails = {
   "vpi": {
     id: 8,
     slug: "vpi",
-    heroImage: "/images/products/vpi.jpg",
-    gallery: ["/images/products/vpi.jpg"],
+    heroImage: "/images/placeholder.svg",
+    gallery: ["/images/placeholder.svg"],
     references: ["Shell", "Total", "Equinor", "Vopak"],
     tr: {
       name: "VPI Pozisyon Göstergesi",
@@ -583,7 +583,7 @@ export const productDetails = {
       introduction: {
         title: "Vanalarınızı Her Zaman İzleyin",
         content: "VPI Vana Pozisyon Göstergesi, manuel vanalarınızın açık/kapalı durumunu kontrol odanıza ileterek operasyonel görünürlük sağlar. Kritik izolasyon ve bakım süreçlerinde doğru konum bilgisini garanti ederek emniyet seviyesini yükseltir. DCS/SCADA entegrasyonuna uygun seçenekleriyle tesisinizin izleme altyapısını güçlendirir. Yanlış hat hizalaması ve yanlış varsayım riskini azaltır.",
-        image: "/images/products/vpi.jpg"
+        image: "/images/placeholder.svg"
       },
       benefits: [
         { icon: "Monitor", title: "Gerçek Zamanlı", description: "Anlık vana pozisyon bilgisi" },
@@ -592,7 +592,7 @@ export const productDetails = {
         { icon: "Maximize", title: "Görünürlük", description: "Tesis genelinde vana durumu izleme" }
       ],
       products: [
-        { name: "VPI Standart", description: "Genel amaçlı vana pozisyon göstergesi.", details: "Tüm vana tiplerine uygun.", image: "/images/products/vpi.jpg" }
+        { name: "VPI Standart", description: "Genel amaçlı vana pozisyon göstergesi.", details: "Tüm vana tiplerine uygun.", image: "/images/placeholder.svg" }
       ],
       applications: ["Kritik izolasyon vanaları", "Emniyet vanaları", "Uzaktan izleme gerektiren vanalar"],
       specifications: { "Çıkış": "4-20mA, HART, Dijital", "Koruma": "IP66/IP67", "Sertifikalar": "ATEX, IECEx" }
@@ -604,7 +604,7 @@ export const productDetails = {
       introduction: {
         title: "Monitor Your Valves at All Times",
         content: "VPI Valve Position Indicator provides operational visibility by transmitting the open/closed status of your manual valves to your control room. It guarantees correct position information during critical isolation and maintenance, raising safety levels. With options suitable for DCS/SCADA integration, it strengthens your monitoring infrastructure. It reduces wrong lineup and false assumption risks.",
-        image: "/images/products/vpi.jpg"
+        image: "/images/placeholder.svg"
       },
       benefits: [
         { icon: "Monitor", title: "Real-Time", description: "Instant valve position information" },
@@ -613,7 +613,7 @@ export const productDetails = {
         { icon: "Maximize", title: "Visibility", description: "Plant-wide valve status monitoring" }
       ],
       products: [
-        { name: "VPI Standard", description: "General purpose valve position indicator.", details: "Suitable for all valve types.", image: "/images/products/vpi.jpg" }
+        { name: "VPI Standard", description: "General purpose valve position indicator.", details: "Suitable for all valve types.", image: "/images/placeholder.svg" }
       ],
       applications: ["Critical isolation valves", "Safety valves", "Valves requiring remote monitoring"],
       specifications: { "Output": "4-20mA, HART, Digital", "Protection": "IP66/IP67", "Certifications": "ATEX, IECEx" }
