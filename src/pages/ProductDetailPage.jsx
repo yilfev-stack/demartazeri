@@ -86,14 +86,12 @@ const iconMap = {
 
 const ProductDetailPage = () => {
   const { slug } = useParams();
-  const { locale } = useLanguage();
+  const { locale, t } = useLanguage();
   const routes = ROUTE_MAP[locale];
-  const t = uiTexts?.[locale];
+  const uiText = uiTexts?.[locale];
   const company = companyInfo?.[locale];
   const productCategories = products?.[locale]?.categories;
-  const closeLabel = locale === 'tr' ? 'Kapat' : 'Close';
-  const { language } = useLanguage();
-  const isTrOrAz = language === "tr" || language === "az";
+  const closeLabel = t('Kapat', 'Close', 'Bağla');
   const [isVisible, setIsVisible] = useState({});
   const [activeImage, setActiveImage] = useState(0);
   
@@ -124,18 +122,6 @@ const ProductDetailPage = () => {
     }
   }
 
-  if (!t || !company || !productCategories || !product) {
-    return (
-      <div className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-grow pt-[104px] flex items-center justify-center">
-          <TranslationNotice locale={locale} />
-        </main>
-        <Footer />
-      </div>
-    );
-  }
-
   // Intersection Observer for scroll animations
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -156,14 +142,26 @@ const ProductDetailPage = () => {
     return () => observer.disconnect();
   }, [product]);
 
+  if (!uiText || !company || !productCategories) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-grow pt-[104px] flex items-center justify-center">
+          <TranslationNotice locale={locale} />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   if (!product && !basicProduct) {
     return (
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow pt-[104px] flex items-center justify-center">
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-gray-900 mb-4">{t.productNotFound}</h1>
-            <Link to={routes.products} className="text-[#00a0e3] hover:underline">{t.backToProducts}</Link>
+            <h1 className="text-2xl font-bold text-gray-900 mb-4">{uiText.productNotFound}</h1>
+            <Link to={routes.products} className="text-[#00a0e3] hover:underline">{uiText.backToProducts}</Link>
           </div>
         </main>
         <Footer />
@@ -181,7 +179,7 @@ const ProductDetailPage = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <Link to={routes.products} className="inline-flex items-center text-white/70 hover:text-white mb-6 transition-colors">
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                {t.backToProducts}
+                {uiText.backToProducts}
               </Link>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{basicProduct.name}</h1>
               <p className="text-xl text-white/80 max-w-2xl">{basicProduct.description}</p>
@@ -199,12 +197,12 @@ const ProductDetailPage = () => {
                   {faqData.image && (
                     <img
                       src={faqData.image}
-                      alt={faqData.title || t.faqTitle}
+                      alt={faqData.title || uiText.faqTitle}
                       className="h-12 w-12 rounded-full border border-gray-200 object-cover"
                     />
                   )}
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                    {t.faqTitle}
+                    {uiText.faqTitle}
                   </h2>
                 </div>
                 {faqData.scopeNote && (
@@ -214,7 +212,6 @@ const ProductDetailPage = () => {
                   items={faqData.items}
                   defaultOpenAll
                   closeLabel={closeLabel}
-                  closeLabel={isTrOrAz ? "Bağla" : "Close"}
                 />
               </div>
             </section>
@@ -250,7 +247,7 @@ const ProductDetailPage = () => {
               className="inline-flex items-center text-white/60 hover:text-white mb-8 transition-all duration-300 hover:translate-x-[-4px]"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              {t.allProducts}
+              {uiText.allProducts}
             </Link>
             
             <div className="max-w-4xl">
@@ -269,14 +266,14 @@ const ProductDetailPage = () => {
                   to={routes.contact} 
                   className="inline-flex items-center px-8 py-4 bg-[#00a0e3] text-white font-semibold rounded-full hover:bg-[#0090d0] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#00a0e3]/30"
                 >
-                  {t.getQuote}
+                  {uiText.getQuote}
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
                 <a 
                   href="#detaylar" 
                   className="inline-flex items-center px-8 py-4 bg-white/10 text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
                 >
-                  {t.viewDetails}
+                  {uiText.viewDetails}
                   <ChevronRight className="ml-2 w-5 h-5" />
                 </a>
               </div>
@@ -309,7 +306,7 @@ const ProductDetailPage = () => {
                   to={routes.contact}
                   className="inline-flex items-center text-[#00a0e3] font-semibold hover:underline"
                 >
-                  {t.requestFreeDemo}
+                  {uiText.requestFreeDemo}
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </div>
@@ -333,10 +330,10 @@ const ProductDetailPage = () => {
               className={`animate-on-scroll text-center mb-16 transition-all duration-1000 ${isVisible['benefits-title'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                {t.whyProduct} {product.name.split(' ')[0]}?
+                {uiText.whyProduct} {product.name.split(' ')[0]}?
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                {t.keyBenefits}
+                {uiText.keyBenefits}
               </p>
             </div>
 
@@ -371,10 +368,10 @@ const ProductDetailPage = () => {
                 className={`animate-on-scroll text-center mb-16 transition-all duration-1000 ${isVisible['products-title'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
               >
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                  {t.productVariants}
+                  {uiText.productVariants}
                 </h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                  {t.solutionsForEveryNeed}
+                  {uiText.solutionsForEveryNeed}
                 </p>
               </div>
 
@@ -400,7 +397,7 @@ const ProductDetailPage = () => {
                         to={routes.contact}
                         className="inline-flex items-center text-[#00a0e3] font-semibold hover:underline"
                       >
-                        {t.getDetailedInfo}
+                        {uiText.getDetailedInfo}
                         <ArrowRight className="ml-2 w-5 h-5" />
                       </Link>
                     </div>
@@ -416,9 +413,9 @@ const ProductDetailPage = () => {
           <section className="py-24 bg-gray-900 text-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.components}</h2>
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">{uiText.components}</h2>
                 <p className="text-xl text-white/70 max-w-2xl mx-auto">
-                  {t.highQualityParts}
+                  {uiText.highQualityParts}
                 </p>
               </div>
 
@@ -448,10 +445,10 @@ const ProductDetailPage = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                  {t.mountingKits}
+                  {uiText.mountingKits}
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  {t.mountingKitsDesc}
+                  {uiText.mountingKitsDesc}
                 </p>
               </div>
 
@@ -480,7 +477,7 @@ const ProductDetailPage = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                  {t.customersSay}
+                  {uiText.customersSay}
                 </h2>
               </div>
 
@@ -517,7 +514,7 @@ const ProductDetailPage = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-                    {t.technicalSpecs}
+                    {uiText.technicalSpecs}
                   </h2>
                   <div className="space-y-4">
                     {Object.entries(product.specifications).map(([key, value], index) => (
@@ -536,7 +533,7 @@ const ProductDetailPage = () => {
                 {product.applications && (
                   <div>
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-                      {t.applicationAreas}
+                      {uiText.applicationAreas}
                     </h2>
                     <div className="grid grid-cols-1 gap-4">
                       {product.applications.map((app, index) => (
@@ -561,7 +558,7 @@ const ProductDetailPage = () => {
           <section className="py-24 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center">
-                {t.gallery}
+                {uiText.gallery}
               </h2>
               
               <div className="mb-8">
@@ -592,7 +589,7 @@ const ProductDetailPage = () => {
           <section className="py-16 bg-white border-t border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <p className="text-center text-gray-500 mb-8 text-lg">
-                {t.trustedByLeaders}
+                {uiText.trustedByLeaders}
               </p>
               <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
                 {product.references.map((ref, index) => (
@@ -612,12 +609,12 @@ const ProductDetailPage = () => {
                 {faqData.image && (
                   <img
                     src={faqData.image}
-                    alt={faqData.title || t.faqTitle}
+                    alt={faqData.title || uiText.faqTitle}
                     className="h-12 w-12 rounded-full border border-gray-200 object-cover"
                   />
                 )}
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                  {t.faqTitle}
+                  {uiText.faqTitle}
                 </h2>
               </div>
               {faqData.scopeNote && (
@@ -627,9 +624,6 @@ const ProductDetailPage = () => {
                 items={faqData.items}
                 defaultOpenAll
                 closeLabel={closeLabel}
-
-                closeLabel={isTrOrAz ? "Bağla" : "Close"}
-
               />
             </div>
           </section>
@@ -639,10 +633,10 @@ const ProductDetailPage = () => {
         <section className="py-24 bg-gradient-to-r from-gray-900 to-gray-800">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {product.name} {t.getInfoAbout}
+              {product.name} {uiText.getInfoAbout}
             </h2>
             <p className="text-xl text-white/80 mb-10">
-              {t.expertTeamReady}
+              {uiText.expertTeamReady}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
@@ -650,14 +644,14 @@ const ProductDetailPage = () => {
                 className="inline-flex items-center justify-center px-8 py-4 bg-[#00a0e3] text-white font-semibold rounded-full hover:bg-[#0090d0] transition-all duration-300 hover:scale-105"
               >
                 <Mail className="mr-2 w-5 h-5" />
-                {t.requestQuote}
+                {uiText.requestQuote}
               </Link>
               <a 
                 href={`tel:${company.phone}`}
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transition-all duration-300 hover:scale-105"
               >
                 <Phone className="mr-2 w-5 h-5" />
-                {t.callNow}
+                {uiText.callNow}
               </a>
             </div>
           </div>

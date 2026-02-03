@@ -132,8 +132,6 @@ const CookiePolicyPage = () => {
   const { locale, t } = useLanguage();
   const data = content?.[locale];
   const hasContent = Boolean(data);
-  const { language } = useLanguage();
-  const isTrOrAz = language === 'tr' || language === 'az';
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -183,7 +181,7 @@ const CookiePolicyPage = () => {
             ) : (
               <>
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                  {t('İstifadə Etdiyimiz Çərəz Növləri', 'Types of Cookies We Use', 'İstifadə Etdiyimiz Çərəz Növləri')}
+                  {t('Kullandığımız Çerez Türleri', 'Types of Cookies We Use', 'İstifadə Etdiyimiz Çərəz Növləri')}
                 </h2>
                 <div className="space-y-6 mb-8">
                   {data.cookieTypes.map((type, index) => {
@@ -191,17 +189,17 @@ const CookiePolicyPage = () => {
                     return (
                       <div key={index} className="bg-white rounded-lg shadow-md p-6">
                         <div className="flex items-center gap-3 mb-4">
-                          <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${!type.canDisable ? 'bg-green-100' : 'bg-[#00a0e3]/10'}`}>
-                            <IconComponent className={`w-5 h-5 ${!type.canDisable ? 'text-green-600' : 'text-[#00a0e3]'}`} />
-                          </div>
-                          <div>
-                            <h3 className="text-lg font-bold text-gray-900">{type.title}</h3>
-                            <span className={`text-xs font-medium px-2 py-0.5 rounded ${!type.canDisable ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'}`}>
-                              {!type.canDisable ? t('Həmişə aktiv', 'Always active', 'Həmişə aktiv') : t('İstəyə bağlı', 'Optional', 'İstəyə bağlı')}
-                            </span>
-                          </div>
+                        <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${!type.canDisable ? 'bg-green-100' : 'bg-[#00a0e3]/10'}`}>
+                          <IconComponent className={`w-5 h-5 ${!type.canDisable ? 'text-green-600' : 'text-[#00a0e3]'}`} />
                         </div>
-                        <p className="text-gray-600 mb-4">{type.description}</p>
+                        <div>
+                          <h3 className="text-lg font-bold text-gray-900">{type.title}</h3>
+                          <span className={`text-xs font-medium px-2 py-0.5 rounded ${!type.canDisable ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'}`}>
+                            {!type.canDisable ? t('Her zaman aktif', 'Always active', 'Həmişə aktiv') : t('İsteğe bağlı', 'Optional', 'İstəyə bağlı')}
+                          </span>
+                        </div>
+                      </div>
+                      <p className="text-gray-600 mb-4">{type.description}</p>
                         <div className="flex flex-wrap gap-2">
                           {type.examples.map((example, idx) => (
                             <span key={idx} className="text-sm bg-gray-100 text-gray-700 px-3 py-1 rounded-full">
@@ -215,36 +213,6 @@ const CookiePolicyPage = () => {
                 </div>
               </>
             )}
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              {isTrOrAz ? 'İstifadə Etdiyimiz Çərəz Növləri' : 'Types of Cookies We Use'}
-            </h2>
-            <div className="space-y-6 mb-8">
-              {data.cookieTypes.map((type, index) => {
-                return (
-                  <div key={index} className="bg-white rounded-lg shadow-md p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${!type.canDisable ? 'bg-green-100' : 'bg-[#00a0e3]/10'}`}>
-                        <IconComponent className={`w-5 h-5 ${!type.canDisable ? 'text-green-600' : 'text-[#00a0e3]'}`} />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-900">{type.title}</h3>
-                        <span className={`text-xs font-medium px-2 py-0.5 rounded ${!type.canDisable ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'}`}>
-                          {!type.canDisable ? (isTrOrAz ? 'Həmişə aktiv' : 'Always active') : (isTrOrAz ? 'İstəyə bağlı' : 'Optional')}
-                        </span>
-                      </div>
-                    </div>
-                    <p className="text-gray-600 mb-4">{type.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {type.examples.map((example, idx) => (
-                        <span key={idx} className="text-sm bg-gray-100 text-gray-700 px-3 py-1 rounded-full">
-                          {example}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
 
             {/* How to Manage */}
             {!hasContent ? (
@@ -253,7 +221,7 @@ const CookiePolicyPage = () => {
               <div className="bg-[#00a0e3]/5 rounded-lg p-6 border border-[#00a0e3]/20 mb-8">
                 <div className="flex items-center gap-3 mb-4">
                   <Settings className="w-6 h-6 text-[#00a0e3]" />
-                <h2 className="text-xl font-bold text-gray-900">{data.howToManage.title}</h2>
+                  <h2 className="text-xl font-bold text-gray-900">{data.howToManage.title}</h2>
                 </div>
                 <p className="text-gray-600 mb-4">{data.howToManage.content}</p>
                 <ul className="space-y-2">

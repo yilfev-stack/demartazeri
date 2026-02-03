@@ -13,15 +13,13 @@ const ApplicationDetailPage = () => {
   const { locale, t } = useLanguage();
   const routes = ROUTE_MAP?.[locale] || ROUTE_MAP?.tr;
 
-  const isTrOrAz = locale === 'tr' || locale === 'az';
-
   const text = {
-    breadcrumbHome: isTrOrAz ? 'Ana Səhifə' : 'Home',
-    breadcrumbApps: isTrOrAz ? 'Tətbiqlər' : 'Applications',
-    notFoundTitle: isTrOrAz ? 'Tətbiq Tapılmadı' : 'Application Not Found',
-    backToApps: isTrOrAz ? 'Tətbiqlərə Qayıt' : 'Back to Applications',
-    badge: isTrOrAz ? 'Tətbiq' : 'Application',
-    benefitsTitle: isTrOrAz ? 'Bu tətbiq üçün həllərimiz:' : 'Solutions for this application:',
+    breadcrumbHome: t('Ana Sayfa', 'Home', 'Ana Səhifə'),
+    breadcrumbApps: t('Uygulamalar', 'Applications', 'Tətbiqlər'),
+    notFoundTitle: t('Uygulama Bulunamadı', 'Application Not Found', 'Tətbiq Tapılmadı'),
+    backToApps: t('Uygulamalara Dön', 'Back to Applications', 'Tətbiqlərə Qayıt'),
+    badge: t('Uygulama', 'Application', 'Tətbiq'),
+    benefitsTitle: t('Bu uygulama için çözümlerimiz:', 'Solutions for this application:', 'Bu tətbiq üçün həllərimiz:'),
     benefits: [
       t(
         'Vana kilitleme sistemleriyle güvenli operasyon',

@@ -15,17 +15,15 @@ import {
 } from 'lucide-react';
 
 const ValveMaintenancePage = () => {
-  const { locale } = useLanguage();
+  const { locale, t } = useLanguage();
   const routes = ROUTE_MAP[locale];
-  const { language } = useLanguage();
-  const isTrOrAz = language === 'tr' || language === 'az';
   const [isVisible, setIsVisible] = useState({});
   const [activeTab, setActiveTab] = useState(0);
   const [counters, setCounters] = useState({ diameter: 0, capacity: 0 });
   const counterRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
-  const t = {
+  const copy = {
     tr: {
       badge: "Profesyonel Endüstriyel Hizmet",
       heroTitle1: "Vana Bakım",
@@ -85,21 +83,40 @@ const ValveMaintenancePage = () => {
       ctaDesc: "Contact us for detailed information about our professional valve maintenance, repair and testing services.",
       contactUs: "Contact Us",
       discover: "Discover"
+    },
+    az: {
+      badge: "Peşəkar Sənaye Xidməti",
+      heroTitle1: "Vana Baxımı",
+      heroTitle2: "Mükəmməlliyi",
+      heroDesc: "12\" diametr tutumu və beynəlxalq standartlarda test infrastrukturu ilə Türkiyənin etibarlı vana baxım mərkəzi.",
+      serviceRequest: "Xidmət Sorğusu",
+      exploreServices: "Xidmətləri nəzərdən keçirin",
+      maxDiameter: "Maksimum Diametr",
+      barCapacity: "Bar Test Tutumu",
+      servicesTitle: "XİDMƏTLƏRİMİZ",
+      servicesSubtitle: "İxtisaslaşdığımız Sahələr",
+      servicesDesc: "Bütün vana növlərində peşəkar baxım, təmir və test xidmətləri",
+      supportedBrands: "Dəstəklənən Markalar",
+      whyUs: "Niyə Biz?",
+      whyUs1: "OEM ekvivalent orijinal ehtiyat hissələri",
+      whyUs2: "Sertifikatlı mütəxəssis texniklər",
+      whyUs3: "Zəmanət və texniki dəstək",
+      testLab: "TEST LABORATORİYASI",
+      testTitle1: "Beynəlxalq",
+      testTitle2: "Standartlarda Test",
+      testDesc: "12\" diametrə və 300 bar təzyiqə qədər olan bütün vanalarınızı API 598, ISO 5208 və EN 12266 standartlarına uyğun olaraq test edirik.",
+      appliedTests: "Tətbiq olunan testlər",
+      processTitle: "PROSES",
+      processSubtitle: "Baxım Prosesimiz",
+      processDesc: "5 addımda peşəkar vana baxım prosesi",
+      ctaTitle: "Vana Baxım Xidmətlərimiz Haqqında",
+      ctaDesc: "Peşəkar vana baxım, təmir və test xidmətlərimiz haqqında ətraflı məlumat almaq üçün bizimlə əlaqə saxlayın.",
+      contactUs: "Əlaqə saxlayın",
+      discover: "Kəşf et"
     }
   };
 
-  const text = t?.[locale];
-  if (!text) {
-    return (
-      <div className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-grow pt-[104px] flex items-center justify-center">
-          <TranslationNotice locale={locale} />
-        </main>
-        <Footer />
-      </div>
-    );
-  }
+  const text = copy?.[locale];
 
   // Counter animation - only 2 stats now (diameter and pressure)
   useEffect(() => {
@@ -137,169 +154,272 @@ const ValveMaintenancePage = () => {
     return () => observer.disconnect();
   }, [hasAnimated]);
 
-  const serviceCategories = locale === 'tr' ? [
-  const serviceCategories = isTrOrAz ? [
-    {
-      id: 'kontrol-vanalari',
-      icon: Settings,
-      title: 'Kontrol Vanaları',
-      subtitle: 'Globe & Segment Vanalar',
-      color: 'from-blue-500 to-cyan-500',
-      services: [
-        { name: 'Globe Kontrol Vanası Revizyonu', desc: 'Trim seti, seat, plug değişimi ve lepleme' },
-        { name: 'Segment Vana Bakımı', desc: 'V-port ve ball segment vana onarımı' },
-        { name: 'Cage Guided Vana Servisi', desc: 'Kafes kılavuzlu vanaların bakımı' },
-        { name: 'Sızıntı Giderme', desc: 'Stem packing ve body gasket değişimi' }
-      ],
-      brands: ['Fisher', 'Masoneilan', 'Samson', 'Valvitalia', 'Flowserve', 'Neles']
-    },
-    {
-      id: 'emniyet-vanalari',
-      icon: Shield,
-      title: 'Emniyet Vanaları',
-      subtitle: 'PSV / PRV / SRV',
-      color: 'from-red-500 to-orange-500',
-      services: [
-        { name: 'PSV/PRV Test ve Kalibrasyon', desc: 'Set basınç ayarı ve sertifikalandırma' },
-        { name: 'Emniyet Vanası Revizyonu', desc: 'Tam demontaj, kontrol ve yenileme' },
-        { name: 'Yay Değişimi', desc: 'Orijinal veya eşdeğer yay takımı' },
-        { name: 'Acil Servis', desc: '7/24 acil müdahale hizmeti' }
-      ],
-      brands: ['Dresser', 'Crosby', 'Consolidated', 'Leser', 'Farris', 'Anderson Greenwood']
-    },
-    {
-      id: 'kuresel-vanalar',
-      icon: CircleDot,
-      title: 'Küresel Vanalar',
-      subtitle: 'Ball Valve Bakım',
-      color: 'from-green-500 to-emerald-500',
-      services: [
-        { name: 'Ball & Seat Değişimi', desc: 'Orijinal veya OEM eşdeğeri parçalar' },
-        { name: 'Gövde Onarımı', desc: 'Kaynak ve talaşlı işlem' },
-        { name: 'Sızdırmazlık Yenileme', desc: 'Packing ve seal değişimi' },
-        { name: 'Aktüatör Entegrasyonu', desc: 'Pnömatik/elektrik aktüatör montajı' }
-      ],
-      brands: ['Cameron', 'Flowserve', 'Velan', 'Kitz', 'Neles', 'Mogas']
-    },
-    {
-      id: 'aktuatorler',
-      icon: Cog,
-      title: 'Aktüatörler',
-      subtitle: 'Pnömatik & Elektrik',
-      color: 'from-purple-500 to-pink-500',
-      services: [
-        { name: 'Pnömatik Aktüatör Bakımı', desc: 'Diyafram, yay ve mil onarımı' },
-        { name: 'Elektrik Aktüatör Servisi', desc: 'Motor ve dişli kutusu revizyonu' },
-        { name: 'Pozisyoner Kalibrasyonu', desc: 'HART/Fieldbus entegrasyonu' },
-        { name: 'Yedek Parça Tedariği', desc: 'Tüm markalar için stok' }
-      ],
-      brands: ['Fisher', 'Rotork', 'AUMA', 'Limitorque', 'Bettis', 'EIM']
-    }
-  ] : [
-    {
-      id: 'control-valves',
-      icon: Settings,
-      title: 'Control Valves',
-      subtitle: 'Globe & Segment Valves',
-      color: 'from-blue-500 to-cyan-500',
-      services: [
-        { name: 'Globe Control Valve Revision', desc: 'Trim set, seat, plug replacement and lapping' },
-        { name: 'Segment Valve Maintenance', desc: 'V-port and ball segment valve repair' },
-        { name: 'Cage Guided Valve Service', desc: 'Maintenance of cage guided valves' },
-        { name: 'Leak Repair', desc: 'Stem packing and body gasket replacement' }
-      ],
-      brands: ['Fisher', 'Masoneilan', 'Samson', 'Valvitalia', 'Flowserve', 'Neles']
-    },
-    {
-      id: 'safety-valves',
-      icon: Shield,
-      title: 'Safety Valves',
-      subtitle: 'PSV / PRV / SRV',
-      color: 'from-red-500 to-orange-500',
-      services: [
-        { name: 'PSV/PRV Test and Calibration', desc: 'Set pressure adjustment and certification' },
-        { name: 'Safety Valve Revision', desc: 'Full disassembly, inspection and refurbishment' },
-        { name: 'Spring Replacement', desc: 'Original or equivalent spring kit' },
-        { name: 'Emergency Service', desc: '24/7 emergency response service' }
-      ],
-      brands: ['Dresser', 'Crosby', 'Consolidated', 'Leser', 'Farris', 'Anderson Greenwood']
-    },
-    {
-      id: 'ball-valves',
-      icon: CircleDot,
-      title: 'Ball Valves',
-      subtitle: 'Ball Valve Maintenance',
-      color: 'from-green-500 to-emerald-500',
-      services: [
-        { name: 'Ball & Seat Replacement', desc: 'Original or OEM equivalent parts' },
-        { name: 'Body Repair', desc: 'Welding and machining' },
-        { name: 'Sealing Renewal', desc: 'Packing and seal replacement' },
-        { name: 'Actuator Integration', desc: 'Pneumatic/electric actuator mounting' }
-      ],
-      brands: ['Cameron', 'Flowserve', 'Velan', 'Kitz', 'Neles', 'Mogas']
-    },
-    {
-      id: 'actuators',
-      icon: Cog,
-      title: 'Actuators',
-      subtitle: 'Pneumatic & Electric',
-      color: 'from-purple-500 to-pink-500',
-      services: [
-        { name: 'Pneumatic Actuator Maintenance', desc: 'Diaphragm, spring and stem repair' },
-        { name: 'Electric Actuator Service', desc: 'Motor and gearbox revision' },
-        { name: 'Positioner Calibration', desc: 'HART/Fieldbus integration' },
-        { name: 'Spare Parts Supply', desc: 'Stock for all brands' }
-      ],
-      brands: ['Fisher', 'Rotork', 'AUMA', 'Limitorque', 'Bettis', 'EIM']
-    }
-  ];
+  const serviceCategoriesByLocale = {
+    tr: [
+      {
+        id: 'kontrol-vanalari',
+        icon: Settings,
+        title: 'Kontrol Vanaları',
+        subtitle: 'Globe & Segment Vanalar',
+        color: 'from-blue-500 to-cyan-500',
+        services: [
+          { name: 'Globe Kontrol Vanası Revizyonu', desc: 'Trim seti, seat, plug değişimi ve lepleme' },
+          { name: 'Segment Vana Bakımı', desc: 'V-port ve ball segment vana onarımı' },
+          { name: 'Cage Guided Vana Servisi', desc: 'Kafes kılavuzlu vanaların bakımı' },
+          { name: 'Sızıntı Giderme', desc: 'Stem packing ve body gasket değişimi' }
+        ],
+        brands: ['Fisher', 'Masoneilan', 'Samson', 'Valvitalia', 'Flowserve', 'Neles']
+      },
+      {
+        id: 'emniyet-vanalari',
+        icon: Shield,
+        title: 'Emniyet Vanaları',
+        subtitle: 'PSV / PRV / SRV',
+        color: 'from-red-500 to-orange-500',
+        services: [
+          { name: 'PSV/PRV Test ve Kalibrasyon', desc: 'Set basınç ayarı ve sertifikalandırma' },
+          { name: 'Emniyet Vanası Revizyonu', desc: 'Tam demontaj, kontrol ve yenileme' },
+          { name: 'Yay Değişimi', desc: 'Orijinal veya eşdeğer yay takımı' },
+          { name: 'Acil Servis', desc: '7/24 acil müdahale hizmeti' }
+        ],
+        brands: ['Dresser', 'Crosby', 'Consolidated', 'Leser', 'Farris', 'Anderson Greenwood']
+      },
+      {
+        id: 'kuresel-vanalar',
+        icon: CircleDot,
+        title: 'Küresel Vanalar',
+        subtitle: 'Ball Valve Bakım',
+        color: 'from-green-500 to-emerald-500',
+        services: [
+          { name: 'Ball & Seat Değişimi', desc: 'Orijinal veya OEM eşdeğeri parçalar' },
+          { name: 'Gövde Onarımı', desc: 'Kaynak ve talaşlı işlem' },
+          { name: 'Sızdırmazlık Yenileme', desc: 'Packing ve seal değişimi' },
+          { name: 'Aktüatör Entegrasyonu', desc: 'Pnömatik/elektrik aktüatör montajı' }
+        ],
+        brands: ['Cameron', 'Flowserve', 'Velan', 'Kitz', 'Neles', 'Mogas']
+      },
+      {
+        id: 'aktuatorler',
+        icon: Cog,
+        title: 'Aktüatörler',
+        subtitle: 'Pnömatik & Elektrik',
+        color: 'from-purple-500 to-pink-500',
+        services: [
+          { name: 'Pnömatik Aktüatör Bakımı', desc: 'Diyafram, yay ve mil onarımı' },
+          { name: 'Elektrik Aktüatör Servisi', desc: 'Motor ve dişli kutusu revizyonu' },
+          { name: 'Pozisyoner Kalibrasyonu', desc: 'HART/Fieldbus entegrasyonu' },
+          { name: 'Yedek Parça Tedariği', desc: 'Tüm markalar için stok' }
+        ],
+        brands: ['Fisher', 'Rotork', 'AUMA', 'Limitorque', 'Bettis', 'EIM']
+      }
+    ],
+    en: [
+      {
+        id: 'control-valves',
+        icon: Settings,
+        title: 'Control Valves',
+        subtitle: 'Globe & Segment Valves',
+        color: 'from-blue-500 to-cyan-500',
+        services: [
+          { name: 'Globe Control Valve Revision', desc: 'Trim set, seat, plug replacement and lapping' },
+          { name: 'Segment Valve Maintenance', desc: 'V-port and ball segment valve repair' },
+          { name: 'Cage Guided Valve Service', desc: 'Maintenance of cage guided valves' },
+          { name: 'Leak Repair', desc: 'Stem packing and body gasket replacement' }
+        ],
+        brands: ['Fisher', 'Masoneilan', 'Samson', 'Valvitalia', 'Flowserve', 'Neles']
+      },
+      {
+        id: 'safety-valves',
+        icon: Shield,
+        title: 'Safety Valves',
+        subtitle: 'PSV / PRV / SRV',
+        color: 'from-red-500 to-orange-500',
+        services: [
+          { name: 'PSV/PRV Test and Calibration', desc: 'Set pressure adjustment and certification' },
+          { name: 'Safety Valve Revision', desc: 'Full disassembly, inspection and refurbishment' },
+          { name: 'Spring Replacement', desc: 'Original or equivalent spring kit' },
+          { name: 'Emergency Service', desc: '24/7 emergency response service' }
+        ],
+        brands: ['Dresser', 'Crosby', 'Consolidated', 'Leser', 'Farris', 'Anderson Greenwood']
+      },
+      {
+        id: 'ball-valves',
+        icon: CircleDot,
+        title: 'Ball Valves',
+        subtitle: 'Ball Valve Maintenance',
+        color: 'from-green-500 to-emerald-500',
+        services: [
+          { name: 'Ball & Seat Replacement', desc: 'Original or OEM equivalent parts' },
+          { name: 'Body Repair', desc: 'Welding and machining' },
+          { name: 'Sealing Renewal', desc: 'Packing and seal replacement' },
+          { name: 'Actuator Integration', desc: 'Pneumatic/electric actuator mounting' }
+        ],
+        brands: ['Cameron', 'Flowserve', 'Velan', 'Kitz', 'Neles', 'Mogas']
+      },
+      {
+        id: 'actuators',
+        icon: Cog,
+        title: 'Actuators',
+        subtitle: 'Pneumatic & Electric',
+        color: 'from-purple-500 to-pink-500',
+        services: [
+          { name: 'Pneumatic Actuator Maintenance', desc: 'Diaphragm, spring and stem repair' },
+          { name: 'Electric Actuator Service', desc: 'Motor and gearbox revision' },
+          { name: 'Positioner Calibration', desc: 'HART/Fieldbus integration' },
+          { name: 'Spare Parts Supply', desc: 'Stock for all brands' }
+        ],
+        brands: ['Fisher', 'Rotork', 'AUMA', 'Limitorque', 'Bettis', 'EIM']
+      }
+    ],
+    az: [
+      {
+        id: 'kontrol-vanalari',
+        icon: Settings,
+        title: 'İdarəetmə Vanaları',
+        subtitle: 'Globe və Segment Vanalar',
+        color: 'from-blue-500 to-cyan-500',
+        services: [
+          { name: 'Globe idarəetmə vanasının reviziyası', desc: 'Trim dəsti, seat və plug dəyişimi, lapping' },
+          { name: 'Segment vananın baxımı', desc: 'V-port və ball segment vananın təmiri' },
+          { name: 'Kafes yönləndirməli vana servisi', desc: 'Kafes yönləndirməli vanaların baxımı' },
+          { name: 'Sızdırmazlığın bərpası', desc: 'Stem packing və korpus qasketinin dəyişimi' }
+        ],
+        brands: ['Fisher', 'Masoneilan', 'Samson', 'Valvitalia', 'Flowserve', 'Neles']
+      },
+      {
+        id: 'emniyet-vanalari',
+        icon: Shield,
+        title: 'Təhlükəsizlik Vanaları',
+        subtitle: 'PSV / PRV / SRV',
+        color: 'from-red-500 to-orange-500',
+        services: [
+          { name: 'PSV/PRV test və kalibrləmə', desc: 'Set təzyiqinin tənzimlənməsi və sertifikatlaşdırma' },
+          { name: 'Təhlükəsizlik vanasının reviziyası', desc: 'Tam sökülmə, yoxlama və yeniləmə' },
+          { name: 'Yay dəyişimi', desc: 'Orijinal və ya ekvivalent yay dəsti' },
+          { name: 'Təcili servis', desc: '24/7 təcili müdaxilə xidməti' }
+        ],
+        brands: ['Dresser', 'Crosby', 'Consolidated', 'Leser', 'Farris', 'Anderson Greenwood']
+      },
+      {
+        id: 'kuresel-vanalar',
+        icon: CircleDot,
+        title: 'Kürə Vanalar',
+        subtitle: 'Ball Valve Baxımı',
+        color: 'from-green-500 to-emerald-500',
+        services: [
+          { name: 'Ball və seat dəyişimi', desc: 'Orijinal və ya OEM ekvivalent hissələr' },
+          { name: 'Korpus təmiri', desc: 'Qaynaq və emal' },
+          { name: 'Sızdırmazlığın yenilənməsi', desc: 'Packing və seal dəyişimi' },
+          { name: 'Aktuator inteqrasiyası', desc: 'Pnevmatik/elektrik aktuator montajı' }
+        ],
+        brands: ['Cameron', 'Flowserve', 'Velan', 'Kitz', 'Neles', 'Mogas']
+      },
+      {
+        id: 'aktuatorler',
+        icon: Cog,
+        title: 'Aktuatorlar',
+        subtitle: 'Pnevmatik və Elektrik',
+        color: 'from-purple-500 to-pink-500',
+        services: [
+          { name: 'Pnevmatik aktuator baxımı', desc: 'Diafraqma, yay və mil təmiri' },
+          { name: 'Elektrik aktuator servisi', desc: 'Motor və reduktorun reviziyası' },
+          { name: 'Pozisioner kalibrlənməsi', desc: 'HART/Fieldbus inteqrasiyası' },
+          { name: 'Ehtiyat hissə təchizatı', desc: 'Bütün markalar üçün stok' }
+        ],
+        brands: ['Fisher', 'Rotork', 'AUMA', 'Limitorque', 'Bettis', 'EIM']
+      }
+    ]
+  };
 
-  const testCapabilities = locale === 'tr' ? [
-  const testCapabilities = isTrOrAz ? [
-    { value: '12"', label: 'Maksimum Çap', desc: 'NPS 12 inch', icon: Gauge },
-    { value: '300', label: 'Bar Basınç', desc: 'Test kapasitesi', icon: Thermometer },
-    { value: '150#-2500#', label: 'Basınç Sınıfı', desc: 'Class aralığı', icon: Activity },
-    { value: '7/24', label: 'Hizmet', desc: 'Acil servis', icon: Clock }
-  ] : [
-    { value: '12"', label: 'Maximum Diameter', desc: 'NPS 12 inch', icon: Gauge },
-    { value: '300', label: 'Bar Pressure', desc: 'Test capacity', icon: Thermometer },
-    { value: '150#-2500#', label: 'Pressure Class', desc: 'Class range', icon: Activity },
-    { value: '24/7', label: 'Service', desc: 'Emergency service', icon: Clock }
-  ];
+  const serviceCategories = serviceCategoriesByLocale[locale];
 
-  const processSteps = locale === 'tr' ? [
-  const processSteps = isTrOrAz ? [
-    { step: '01', title: 'Teslim Alma', desc: 'Detaylı vana kontrolü', icon: Box },
-    { step: '02', title: 'İnceleme', desc: 'Kapsamlı durum analizi', icon: Microscope },
-    { step: '03', title: 'Bakım/Onarım', desc: 'Profesyonel işçilik', icon: Wrench },
-    { step: '04', title: 'Test', desc: 'Uluslararası standartlarda test', icon: Activity },
-    { step: '05', title: 'Teslim', desc: 'Sertifikalı teslimat', icon: Truck }
-  ] : [
-    { step: '01', title: 'Receiving', desc: 'Detailed valve inspection', icon: Box },
-    { step: '02', title: 'Inspection', desc: 'Comprehensive condition analysis', icon: Microscope },
-    { step: '03', title: 'Maintenance/Repair', desc: 'Professional workmanship', icon: Wrench },
-    { step: '04', title: 'Testing', desc: 'International standard testing', icon: Activity },
-    { step: '05', title: 'Delivery', desc: 'Certified delivery', icon: Truck }
-  ];
+  const testCapabilitiesByLocale = {
+    tr: [
+      { value: '12"', label: 'Maksimum Çap', desc: 'NPS 12 inch', icon: Gauge },
+      { value: '300', label: 'Bar Basınç', desc: 'Test kapasitesi', icon: Thermometer },
+      { value: '150#-2500#', label: 'Basınç Sınıfı', desc: 'Class aralığı', icon: Activity },
+      { value: '7/24', label: 'Hizmet', desc: 'Acil servis', icon: Clock }
+    ],
+    en: [
+      { value: '12"', label: 'Maximum Diameter', desc: 'NPS 12 inch', icon: Gauge },
+      { value: '300', label: 'Bar Pressure', desc: 'Test capacity', icon: Thermometer },
+      { value: '150#-2500#', label: 'Pressure Class', desc: 'Class range', icon: Activity },
+      { value: '24/7', label: 'Service', desc: 'Emergency service', icon: Clock }
+    ],
+    az: [
+      { value: '12"', label: 'Maksimum Diametr', desc: 'NPS 12 inch', icon: Gauge },
+      { value: '300', label: 'Bar Təzyiqi', desc: 'Test tutumu', icon: Thermometer },
+      { value: '150#-2500#', label: 'Təzyiq Sinfi', desc: 'Sinif aralığı', icon: Activity },
+      { value: '24/7', label: 'Xidmət', desc: 'Təcili servis', icon: Clock }
+    ]
+  };
 
+  const processStepsByLocale = {
+    tr: [
+      { step: '01', title: 'Teslim Alma', desc: 'Detaylı vana kontrolü', icon: Box },
+      { step: '02', title: 'İnceleme', desc: 'Kapsamlı durum analizi', icon: Microscope },
+      { step: '03', title: 'Bakım/Onarım', desc: 'Profesyonel işçilik', icon: Wrench },
+      { step: '04', title: 'Test', desc: 'Uluslararası standartlarda test', icon: Activity },
+      { step: '05', title: 'Teslim', desc: 'Sertifikalı teslimat', icon: Truck }
+    ],
+    en: [
+      { step: '01', title: 'Receiving', desc: 'Detailed valve inspection', icon: Box },
+      { step: '02', title: 'Inspection', desc: 'Comprehensive condition analysis', icon: Microscope },
+      { step: '03', title: 'Maintenance/Repair', desc: 'Professional workmanship', icon: Wrench },
+      { step: '04', title: 'Testing', desc: 'International standard testing', icon: Activity },
+      { step: '05', title: 'Delivery', desc: 'Certified delivery', icon: Truck }
+    ],
+    az: [
+      { step: '01', title: 'Qəbul', desc: 'Ətraflı vana yoxlaması', icon: Box },
+      { step: '02', title: 'Yoxlama', desc: 'Əhatəli vəziyyət analizi', icon: Microscope },
+      { step: '03', title: 'Baxım/Təmir', desc: 'Peşəkar işçilik', icon: Wrench },
+      { step: '04', title: 'Test', desc: 'Beynəlxalq standartlarda test', icon: Activity },
+      { step: '05', title: 'Təhvil', desc: 'Sertifikatlı təhvil', icon: Truck }
+    ]
+  };
 
-  const appliedTests = locale === 'tr' ? [
-  const appliedTests = isTrOrAz ? [
+  const appliedTestsByLocale = {
+    tr: [
+      'Shell Test (Gövde Basınç Testi)',
+      'Seat Test (Sızdırmazlık Testi)',
+      'Backseat Test',
+      'Çift Yönlü Sızdırmazlık',
+      'Fonksiyonel & Torque Testi',
+      'API 527 / API 598 Testleri'
+    ],
+    en: [
+      'Shell Test (Body Pressure Test)',
+      'Seat Test (Leak Test)',
+      'Backseat Test',
+      'Bi-directional Sealing',
+      'Functional & Torque Test',
+      'API 527 / API 598 Tests'
+    ],
+    az: [
+      'Shell Test (Korpus təzyiq testi)',
+      'Seat Test (Sızdırmazlıq testi)',
+      'Backseat Test',
+      'İki istiqamətli sızdırmazlıq',
+      'Funksional və tork testi',
+      'API 527 / API 598 Testləri'
+    ]
+  };
 
-    'Shell Test (Gövde Basınç Testi)',
-    'Seat Test (Sızdırmazlık Testi)',
-    'Backseat Test',
-    'Çift Yönlü Sızdırmazlık',
-    'Fonksiyonel & Torque Testi',
-    'API 527 / API 598 Testleri'
-  ] : [
-    'Shell Test (Body Pressure Test)',
-    'Seat Test (Leak Test)',
-    'Backseat Test',
-    'Bi-directional Sealing',
-    'Functional & Torque Test',
-    'API 527 / API 598 Tests'
-  ];
+  const testCapabilities = testCapabilitiesByLocale[locale];
+  const processSteps = processStepsByLocale[locale];
+  const appliedTests = appliedTestsByLocale[locale];
+
+  if (!text) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-grow pt-[104px] flex items-center justify-center">
+          <TranslationNotice locale={locale} />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-white overflow-x-hidden">
@@ -361,12 +481,8 @@ const ValveMaintenancePage = () => {
               <div className="relative" ref={counterRef}>
                 <div className="mb-6 rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-black/40">
                   <img
-                    src="/images/services/operations.jpg"
-
-                    alt={locale === 'tr' ? 'Vana bakım atölyesi' : 'Valve maintenance workshop'}
-
-                    alt={isTrOrAz ? 'Vana bakım atölyesi' : 'Valve maintenance workshop'}
-
+                    src="/images/placeholder.svg"
+                    alt={t('Vana bakım atölyesi', 'Valve maintenance workshop', 'Vana baxım emalatxanası')}
                     className="w-full h-64 object-cover"
                   />
                 </div>
